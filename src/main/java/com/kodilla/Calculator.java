@@ -9,8 +9,14 @@ public class Calculator {
     }
 
     public static void main(String[] args){
-        Calculator calculator = new Calculator();
-        calculator.sum();
-        calculator.difference();
+        int a = 186;
+        int b = 56;
+        while (a != b){
+            if (a > b)
+                a -= b;
+            else
+                b -= a;
+        }
+        System.out.println("NWD = " + a);
     }
 }
