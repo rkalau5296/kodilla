@@ -20,17 +20,6 @@ public class CollectionTestSuite {
     public void after(){
         System.out.println("Test Case: end");
     }
-//    private void checkIfIsOddElements(OddNumbersExterminator oddNumbersExterminator ){
-//        ArrayList<Integer> evenNumberList = oddNumbersExterminator.exterminate(numbers);
-//        for (int i = 0; i<evenNumberList.size(); i++){
-//            if (evenNumberList.get(i)%2!=0){
-//                System.out.println("Error. The list contains odd elements");
-//                return;
-//            }
-//        }
-//        System.out.println("Everything is OK. There is no odd elements.");
-//    }
-
 
     @Test
     public void testOddNumbersExterminatorEmptyList (){
