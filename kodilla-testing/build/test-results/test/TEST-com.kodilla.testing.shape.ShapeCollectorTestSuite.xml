@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kodilla.testing.shape.ShapeCollectorTestSuite" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-06-21T13:09:42" hostname="ITM4334" time="0.003">
+  <properties/>
+  <testcase name="testAddFigure" classname="com.kodilla.testing.shape.ShapeCollectorTestSuite" time="0.003"/>
+  <system-out><![CDATA[This is the beginning of tests.
+Preparing to execute test #1
+All tests are finished.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
