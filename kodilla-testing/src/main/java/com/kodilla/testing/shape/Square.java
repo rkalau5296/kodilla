@@ -35,9 +35,6 @@ public class Square implements Shape {
     public void getField() {
 
     }
-
-    @Override
-    public int getShapeQuantity() {
-        return getShapeQuantity();
-    }
 }
+
+

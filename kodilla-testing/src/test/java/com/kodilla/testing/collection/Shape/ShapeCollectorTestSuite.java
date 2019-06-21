@@ -40,7 +40,9 @@ public class ShapeCollectorTestSuite {
 
 
         //Then
-        Assert.assertEquals(3, shapeCollector.getShapesQuantity());
+        Assert.assertEquals(3, shapeCollector.getSquareFiguresQuantity());
+        Assert.assertEquals(2, shapeCollector.getTriangleFiguresQuantity());
+        Assert.assertEquals(2, shapeCollector.getCircleFiguresQuantity());
     }
     @Test
     public void removeFigure (){
@@ -53,7 +55,9 @@ public class ShapeCollectorTestSuite {
         shapeCollector.removeFigure(new Square(4));
 
         //Then
-        //Assert.assertNotEquals();
+        Assert.assertEquals(2, shapeCollector.getSquareFiguresQuantity());
+        Assert.assertEquals(1, shapeCollector.getTriangleFiguresQuantity());
+        Assert.assertEquals(1, shapeCollector.getCircleFiguresQuantity());
     }
     @Test
     public void getFigure (){
@@ -61,12 +65,15 @@ public class ShapeCollectorTestSuite {
         ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
-        shapeCollector.getFigure(2);
+        shapeCollector.getFigure(0);
         shapeCollector.getFigure(1);
-        shapeCollector.getFigure(8);
+        shapeCollector.getFigure(4);
 
         //Then
-        //Assert.assertEquals();
+        Assert.assertEquals(new Circle(5), new Circle(5));
+        Assert.assertEquals(new Circle(4), new Circle(4));
+        Assert.assertEquals(new Triangle(4,2), new Triangle(4,2));
+
     }
     @Test
     public void showFigures (){
@@ -75,9 +82,8 @@ public class ShapeCollectorTestSuite {
 
         //When
         shapeCollector.showFigures();
-        shapeCollector.showFigures();
 
         //Then
-        //Assert.assertEquals();
+        Assert.assertEquals(new Circle(4), shapeCollector.showFigures());
     }
 }
