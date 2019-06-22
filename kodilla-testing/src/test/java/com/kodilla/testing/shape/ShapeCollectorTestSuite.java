@@ -82,15 +82,21 @@ public class ShapeCollectorTestSuite {
         Assert.assertEquals(new Triangle(4,2), new Triangle(4,2));
 
     }
-//    @Test
-//    public void showFigures (){
-//        //Given
-//        ShapeCollector shapeCollector = new ShapeCollector();
-//
-//        //When
-//        //shapeCollector.showFigures();
-//
-//        //Then
-////        Assert.assertEquals(new Circle(4), shapeCollector.showFigures());
-//    }
+    @Test
+    public void displayFigures(){
+        //Given
+        ShapeCollector shapeCollector = new ShapeCollector();
+
+        //When
+        shapeCollector.addFigure(new Circle(5));
+        shapeCollector.addFigure(new Circle(4));
+        shapeCollector.addFigure(new Triangle(5,2));
+        shapeCollector.addFigure(new Triangle(4,2));
+        shapeCollector.addFigure(new Square(2));
+        shapeCollector.addFigure(new Square(4));
+        shapeCollector.addFigure(new Square(5));
+
+        //Then
+        shapeCollector.showFigures();
+    }
 }
