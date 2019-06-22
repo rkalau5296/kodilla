@@ -1,6 +1,4 @@
-package com.kodilla.testing.Forum;
-
-import java.util.Objects;
+package com.kodilla.testing.forum;
 
 public class ForumPost {
     String postBody;

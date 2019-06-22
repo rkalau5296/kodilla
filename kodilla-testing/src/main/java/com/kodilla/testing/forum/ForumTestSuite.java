@@ -1,4 +1,4 @@
-package com.kodilla.testing.Forum;
+package com.kodilla.testing.forum;
 
 public class ForumTestSuite {
 
