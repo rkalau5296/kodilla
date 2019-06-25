@@ -12,22 +12,22 @@ public class WorldTestSuite {
         //Given
 
         Continent europe = new Continent("Europe");
-        europe.addCountry(new Country("Polska", new BigDecimal("4")));
-        europe.addCountry(new Country("Niemcy", new BigDecimal("5")));
-        europe.addCountry(new Country("Czechy", new BigDecimal("6")));
-        europe.addCountry(new Country("Francja", new BigDecimal("5")));
+        europe.addCountry(new Country("Polska", new BigDecimal("10000000")));
+        europe.addCountry(new Country("Niemcy", new BigDecimal("20000000")));
+        europe.addCountry(new Country("Czechy", new BigDecimal("30000000")));
+        europe.addCountry(new Country("Francja", new BigDecimal("40000000")));
 
         Continent asia = new Continent("Asia");
-        asia.addCountry(new Country("Russia", new BigDecimal("4")));
-        asia.addCountry(new Country("China", new BigDecimal("6")));
-        asia.addCountry(new Country("Japan", new BigDecimal("5")));
-        asia.addCountry(new Country("Izrael", new BigDecimal("5")));
+        asia.addCountry(new Country("Russia", new BigDecimal("10000000")));
+        asia.addCountry(new Country("China", new BigDecimal("20000000")));
+        asia.addCountry(new Country("Japan", new BigDecimal("30000000")));
+        asia.addCountry(new Country("Izrael", new BigDecimal("40000000")));
 
         Continent southAmerica = new Continent("SouthAmerica");
-        southAmerica.addCountry(new Country("Brasil", new BigDecimal("4")));
-        southAmerica.addCountry(new Country("Argentina", new BigDecimal("5")));
-        southAmerica.addCountry(new Country("Paraguay", new BigDecimal("6")));
-        southAmerica.addCountry(new Country("Peru", new BigDecimal("5")));
+        southAmerica.addCountry(new Country("Brasil", new BigDecimal("10000000")));
+        southAmerica.addCountry(new Country("Argentina", new BigDecimal("20000000")));
+        southAmerica.addCountry(new Country("Paraguay", new BigDecimal("30000000")));
+        southAmerica.addCountry(new Country("Peru", new BigDecimal("40000000")));
 
         World world = new World();
         world.addContinent(europe);
@@ -38,7 +38,7 @@ public class WorldTestSuite {
 
         BigDecimal actual = world.getPeopleQuantity();
         //Then
-        BigDecimal expectedQuantityPeople = new BigDecimal("60");
+        BigDecimal expectedQuantityPeople = new BigDecimal("300000000");
         Assert.assertEquals(expectedQuantityPeople, actual );
     }
 }
