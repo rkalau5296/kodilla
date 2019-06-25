@@ -11,28 +11,28 @@ public class WorldTestSuite {
 
         //Given
 
-        Continent Europe = new Continent("Europe");
-        Europe.addCountry(new Country("Polska", new BigDecimal("4")));
-        Europe.addCountry(new Country("Niemcy", new BigDecimal("5")));
-        Europe.addCountry(new Country("Czechy", new BigDecimal("6")));
-        Europe.addCountry(new Country("Francja", new BigDecimal("5")));
+        Continent europe = new Continent("Europe");
+        europe.addCountry(new Country("Polska", new BigDecimal("4")));
+        europe.addCountry(new Country("Niemcy", new BigDecimal("5")));
+        europe.addCountry(new Country("Czechy", new BigDecimal("6")));
+        europe.addCountry(new Country("Francja", new BigDecimal("5")));
 
-        Continent Asia = new Continent("Asia");
-        Asia.addCountry(new Country("Russia", new BigDecimal("4")));
-        Asia.addCountry(new Country("China", new BigDecimal("6")));
-        Asia.addCountry(new Country("Japan", new BigDecimal("5")));
-        Asia.addCountry(new Country("Izrael", new BigDecimal("5")));
+        Continent asia = new Continent("Asia");
+        asia.addCountry(new Country("Russia", new BigDecimal("4")));
+        asia.addCountry(new Country("China", new BigDecimal("6")));
+        asia.addCountry(new Country("Japan", new BigDecimal("5")));
+        asia.addCountry(new Country("Izrael", new BigDecimal("5")));
 
-        Continent SouthAmerica = new Continent("SouthAmerica");
-        Asia.addCountry(new Country("Brasil", new BigDecimal("4")));
-        Asia.addCountry(new Country("Argentina", new BigDecimal("5")));
-        Asia.addCountry(new Country("Paraguay", new BigDecimal("6")));
-        Asia.addCountry(new Country("Peru", new BigDecimal("5")));
+        Continent southAmerica = new Continent("SouthAmerica");
+        southAmerica.addCountry(new Country("Brasil", new BigDecimal("4")));
+        southAmerica.addCountry(new Country("Argentina", new BigDecimal("5")));
+        southAmerica.addCountry(new Country("Paraguay", new BigDecimal("6")));
+        southAmerica.addCountry(new Country("Peru", new BigDecimal("5")));
 
         World world = new World();
-        world.addContinent(Europe);
-        world.addContinent(Asia);
-        world.addContinent(SouthAmerica);
+        world.addContinent(europe);
+        world.addContinent(asia);
+        world.addContinent(southAmerica);
 
         //When
 
