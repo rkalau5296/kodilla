@@ -21,6 +21,15 @@ public class CollectionTestSuite {
         System.out.println("Test Case: end");
     }
 
+    private void createExpectedList(){
+        ArrayList<Integer> expectedList = new ArrayList<>();
+        for (int i=0;i<20; i++){
+
+            if (numbers.get(i) % 2 == 0) {
+                expectedList.add(numbers.get(i));
+            }
+        }
+    }
     @Test
     public void testOddNumbersExterminatorEmptyList (){
         //Given
@@ -35,21 +44,35 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEvenList (){
         //Given
+        ArrayList<Integer> expectedList = new ArrayList<>();
+        for (int i=0;i<20; i++){
+            if (numbers.get(i) % 2 == 0) {
+                expectedList.add(numbers.get(i));
+            }
+        }
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+
         //When
-        int result = oddNumbersExterminator.exterminate(numbers).get(1);
-        System.out.println("testing " + result);
+        ArrayList<Integer> result = oddNumbersExterminator.exterminate(numbers);
+
         //Then
-        Assert.assertEquals(2,  result);
+        Assert.assertEquals(expectedList,  result);
     }
     @Test
     public void testOddNumbersExterminatorOddList (){
         //Given
+        ArrayList<Integer> expectedList = new ArrayList<>();
+        for (int i=0;i<20; i++){
+            if (!(numbers.get(i) % 2 == 0)) {
+                expectedList.add(numbers.get(i));
+            }
+        }
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+
         //When
-        int result = oddNumbersExterminator.exterminate(numbers).get(1);
-        System.out.println("testing " + result);
+        ArrayList<Integer> result = oddNumbersExterminator.exterminate(numbers);
+
         //Then
-        Assert.assertNotEquals(3,  result);
+        Assert.assertNotEquals(expectedList,  result);
     }
 }
