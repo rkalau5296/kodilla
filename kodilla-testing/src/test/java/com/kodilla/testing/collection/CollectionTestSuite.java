@@ -21,7 +21,7 @@ public class CollectionTestSuite {
         System.out.println("Test Case: end");
     }
 
-    
+
     @Test
     public void testOddNumbersExterminatorEmptyList (){
         //Given
@@ -49,6 +49,7 @@ public class CollectionTestSuite {
 
         //Then
         Assert.assertEquals(expectedList,  result);
+        Assert.assertEquals(expectedList.size(),  result.size());
     }
     @Test
     public void testOddNumbersExterminatorOddList (){
