@@ -156,7 +156,7 @@ public class BoardTestSuite {
         long avg = numberOfDaysInProgress/numberOfTaskInProgress;
 
         //Then
-        
+
         Assert.assertEquals(3, numberOfTaskInProgress);
         Assert.assertEquals(10, avg);
 
