@@ -21,15 +21,7 @@ public class CollectionTestSuite {
         System.out.println("Test Case: end");
     }
 
-    private void createExpectedList(){
-        ArrayList<Integer> expectedList = new ArrayList<>();
-        for (int i=0;i<20; i++){
-
-            if (numbers.get(i) % 2 == 0) {
-                expectedList.add(numbers.get(i));
-            }
-        }
-    }
+    
     @Test
     public void testOddNumbersExterminatorEmptyList (){
         //Given
