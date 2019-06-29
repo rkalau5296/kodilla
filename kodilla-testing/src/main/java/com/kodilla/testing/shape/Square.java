@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Square implements Shape {
     int lenght;
+    String name;
 
     public Square(int lenght) {
         this.lenght = lenght;
@@ -27,13 +28,20 @@ public class Square implements Shape {
     }
 
     @Override
-    public void getShapeName() {
-
+    public String getShapeName() {
+        return name;
     }
 
     @Override
-    public void getField() {
+    public double getField() {
+        return lenght*lenght;
+    }
 
+    @Override
+    public String toString() {
+        return "Square{" +
+                "lenght=" + lenght +
+                '}';
     }
 }
 

@@ -3,7 +3,7 @@ package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
 public class ShapeCollector {
-    ArrayList<Shape> shapes = new ArrayList<>();
+       ArrayList<Shape> shapes = new ArrayList<>();
 
     public void addFigure(Shape shape){
 
@@ -23,16 +23,18 @@ public class ShapeCollector {
     public void showFigures(){
 
         for(int i = 0; i<shapes.size(); i++)
-        System.out.println(shapes);
-        //return text;
+        {
+            System.out.println(getFigure(i));
+        }
+
     }
+
+
     @Override
-    public String toString(){
-        return "Name: " + shapes + "Field:" + shapes;
+    public String toString() {
+        return "ShapeCollector{" +
+                "shapes=" + shapes +
+                '}';
     }
 
-    public int getShapesQuantity(){
-
-        return shapes.size();
-    }
 }

@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Circle implements Shape {
     int radius;
+    String name;
 
     public Circle(int radius) {
         this.radius = radius;
@@ -27,13 +28,19 @@ public class Circle implements Shape {
     }
 
     @Override
-    public void getShapeName() {
-
+    public String getShapeName() {
+            return name;
     }
 
     @Override
-    public void getField() {
-
+    public double getField() {
+        return 3.14*radius*radius;
     }
 
+    @Override
+    public String toString() {
+        return "Circle{" +
+                "radius=" + radius +
+                '}';
+    }
 }

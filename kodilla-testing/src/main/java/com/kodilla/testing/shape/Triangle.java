@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Triangle implements Shape{
     int lenght;
     int hieght;
+    String name;
 
     public Triangle(int lenght, int hieght) {
         this.lenght = lenght;
@@ -35,14 +36,20 @@ public class Triangle implements Shape{
 
 
     @Override
-    public void getShapeName() {
-
+    public String getShapeName() {
+        return name;
     }
 
     @Override
-    public void getField() {
-
+    public double getField() {
+        return (lenght*hieght)/2;
     }
 
-
+    @Override
+    public String toString() {
+        return "Triangle{" +
+                "lenght=" + lenght +
+                ", hieght=" + hieght +
+                '}';
+    }
 }
