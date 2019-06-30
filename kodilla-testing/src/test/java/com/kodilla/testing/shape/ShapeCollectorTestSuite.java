@@ -2,7 +2,8 @@ package com.kodilla.testing.shape;
 
 import org.junit.*;
 
-public class ShapeCollectorTestSuite {
+public class
+ShapeCollectorTestSuite {
     private static int testCounter = 0;
 
     @BeforeClass
@@ -74,14 +75,13 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(new Square(5, "Square3"));
 
         //Then
-        //Assert.assertEquals(, shapeCollector.getFigure(0));
-//        Assert.assertEquals(shapeCollector.shapes.get(1), shapeCollector.getFigure(1));
-//        Assert.assertEquals(shapeCollector.shapes.get(2), shapeCollector.getFigure(2));
-//        Assert.assertEquals(shapeCollector.shapes.get(3), shapeCollector.getFigure(3));
-//        Assert.assertEquals(shapeCollector.shapes.get(4), shapeCollector.getFigure(4));
-//        Assert.assertEquals(shapeCollector.shapes.get(5), shapeCollector.getFigure(5));
-//        Assert.assertEquals(shapeCollector.shapes.get(6), shapeCollector.getFigure(6));
-        System.out.println(shapeCollector.getFigure(0));
+        Assert.assertEquals(new Circle(5, "Circle1"), shapeCollector.getFigure(0));
+        Assert.assertEquals(new Circle(4, "Circle2"), shapeCollector.getFigure(1));
+        Assert.assertEquals(new Triangle(5,2, "Triangle1"), shapeCollector.getFigure(2));
+        Assert.assertEquals(new Triangle(4,2, "Triangle2"), shapeCollector.getFigure(3));
+        Assert.assertEquals(new Square(2, "Square1"), shapeCollector.getFigure(4));
+        Assert.assertEquals(new Square(4, "Square2"), shapeCollector.getFigure(5));
+        Assert.assertEquals(new Square(5, "Square3"), shapeCollector.getFigure(6));
     }
     @Test
     public void displayFigures(){
@@ -98,13 +98,16 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(new Square(5, "Square3"));
 
         //Then
-        Assert.assertEquals("Circle1 78.5", shapeCollector.showFigures(shapeCollector.getFigure(0)));
-        Assert.assertEquals("Circle2 50.24", shapeCollector.showFigures(shapeCollector.getFigure(1)));
-        Assert.assertEquals("Triangle1 5.0", shapeCollector.showFigures(shapeCollector.getFigure(2)));
-        Assert.assertEquals("Triangle2 4.0", shapeCollector.showFigures(shapeCollector.getFigure(3)));
-        Assert.assertEquals("Square1 4.0", shapeCollector.showFigures(shapeCollector.getFigure(4)));
-        Assert.assertEquals("Square2 16.0", shapeCollector.showFigures(shapeCollector.getFigure(5)));
-        Assert.assertEquals("Square3 25.0", shapeCollector.showFigures(shapeCollector.getFigure(6)));
+        String expected = "Circle1 78.5" +"\n"+
+                "Circle2 50.24" + "\n" +
+                "Triangle1 5.0" +"\n"+
+                "Triangle2 4.0" +"\n"+
+                "Square1 4.0" +"\n"+
+                "Square2 16.0" +"\n"+
+                "Square3 25.0"+"\n";
+        Assert.assertEquals(expected, shapeCollector.showFigures());
+        //System.out.println(expected);
+
 
 
 

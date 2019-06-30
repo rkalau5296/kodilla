@@ -20,9 +20,14 @@ public class ShapeCollector {
         return shapes.get(n);
     }
 
-    public String showFigures(Shape shape){
+    public String showFigures(){
+        String allfigures="";
 
-        return shape.getShapeName() + " " + shape.getField();
+        for (int i=0; i<shapes.size();i++){
+            allfigures += shapes.get(i).getShapeName() + " " + shapes.get(i).getField()+"\n";
+        }
+
+        return allfigures;
 
     }
 
