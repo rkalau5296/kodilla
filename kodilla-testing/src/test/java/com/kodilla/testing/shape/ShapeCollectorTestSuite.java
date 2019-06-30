@@ -74,7 +74,7 @@ public class ShapeCollectorTestSuite {
         shapeCollector.addFigure(new Square(5, "Square3"));
 
         //Then
-        Assert.assertEquals(shapeCollector.shapes.get(0), shapeCollector.getFigure(0));
+        //Assert.assertEquals(, shapeCollector.getFigure(0));
 //        Assert.assertEquals(shapeCollector.shapes.get(1), shapeCollector.getFigure(1));
 //        Assert.assertEquals(shapeCollector.shapes.get(2), shapeCollector.getFigure(2));
 //        Assert.assertEquals(shapeCollector.shapes.get(3), shapeCollector.getFigure(3));
