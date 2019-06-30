@@ -20,15 +20,11 @@ public class ShapeCollector {
         return shapes.get(n);
     }
 
-    public void showFigures(){
+    public String showFigures(Shape shape){
 
-        for(int i = 0; i<shapes.size(); i++)
-        {
-            System.out.println(getFigure(i));
-        }
+        return shape.getShapeName() + " " + shape.getField();
 
     }
-
 
     @Override
     public String toString() {

@@ -6,8 +6,11 @@ public class Circle implements Shape {
     int radius;
     String name;
 
-    public Circle(int radius) {
+
+
+    public Circle(int radius, String name) {
         this.radius = radius;
+        this.name = name;
     }
 
     @Override
@@ -41,6 +44,7 @@ public class Circle implements Shape {
     public String toString() {
         return "Circle{" +
                 "radius=" + radius +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

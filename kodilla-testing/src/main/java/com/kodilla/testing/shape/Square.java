@@ -6,8 +6,9 @@ public class Square implements Shape {
     int lenght;
     String name;
 
-    public Square(int lenght) {
+    public Square(int lenght, String name) {
         this.lenght = lenght;
+        this.name = name;
     }
 
     public int getLenght() {
@@ -41,6 +42,7 @@ public class Square implements Shape {
     public String toString() {
         return "Square{" +
                 "lenght=" + lenght +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

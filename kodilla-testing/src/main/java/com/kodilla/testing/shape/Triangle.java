@@ -7,9 +7,12 @@ public class Triangle implements Shape{
     int hieght;
     String name;
 
-    public Triangle(int lenght, int hieght) {
+
+
+    public Triangle(int lenght, int hieght, String name) {
         this.lenght = lenght;
         this.hieght = hieght;
+        this.name = name;
     }
 
     public int getLenght() {
@@ -50,6 +53,7 @@ public class Triangle implements Shape{
         return "Triangle{" +
                 "lenght=" + lenght +
                 ", hieght=" + hieght +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
