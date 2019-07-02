@@ -4,12 +4,10 @@ import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.HashMap;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
-
 
 public class WeatherForecastTestSuite {
     @Test
@@ -23,6 +21,7 @@ public class WeatherForecastTestSuite {
         temperaturesMap.put(3, 25.2);
         temperaturesMap.put(4, 26.1);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
