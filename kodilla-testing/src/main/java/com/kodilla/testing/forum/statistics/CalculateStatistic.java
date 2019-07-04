@@ -34,14 +34,19 @@ class CalculateStatistics  {
         return avgQuantityOfCommentsPerPost;
     }
 
-    public void calculateAdvStatistics(Statistics statistics){
 
-        quantityOfUsers = statistics.usersNames().size();
-        quantityOfPosts = statistics.postsCount();
-        quantityOfComments = statistics.commentsCount();
-        avgQuantityOfPostsPerUser = statistics.postsCount()/statistics.usersNames().size();
-        avgQuantityOfCommentsPerUser = statistics.commentsCount()/statistics.usersNames().size();
-        avgQuantityOfCommentsPerPost = statistics.commentsCount()/statistics.postsCount();
+    public void calculateAdvStatistics(Statistics statistics){
+        try {
+            quantityOfUsers = statistics.usersNames().size();
+            quantityOfPosts = statistics.postsCount();
+            quantityOfComments = statistics.commentsCount();
+            avgQuantityOfPostsPerUser = statistics.postsCount() / statistics.usersNames().size();
+            avgQuantityOfCommentsPerUser = statistics.commentsCount() / statistics.usersNames().size();
+            avgQuantityOfCommentsPerPost = statistics.commentsCount() / statistics.postsCount();
+        }
+        catch(Exception e){
+            System.out.println("division by zero exception!");
+        }
     }
 
     public String ShowStatistics(){

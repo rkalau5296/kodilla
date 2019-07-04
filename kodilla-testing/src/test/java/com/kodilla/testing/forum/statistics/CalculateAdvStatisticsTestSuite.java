@@ -54,12 +54,7 @@ public class CalculateAdvStatisticsTestSuite {
 
         //When
         CalculateStatistics calculateStatistics = new CalculateStatistics();
-        try {
-            calculateStatistics.calculateAdvStatistics(statisticsMock);
-        }
-        catch (Exception e) {
-            System.out.println("division by zero exception!");
-        }
+        calculateStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
         Assert.assertEquals(6, calculateStatistics.getQuantityOfUsers());
@@ -189,12 +184,7 @@ public class CalculateAdvStatisticsTestSuite {
 
         //When
         CalculateStatistics calculateStatistics = new CalculateStatistics();
-        try {
-            calculateStatistics.calculateAdvStatistics(statisticsMock);
-        }
-        catch (Exception e) {
-            System.out.println("division by zero exception!");
-        }
+        calculateStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
         Assert.assertEquals(0,calculateStatistics.getAvgQuantityOfCommentsPerUser());
