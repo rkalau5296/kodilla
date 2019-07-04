@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.stream.Stream;
 
 public class FileReader {
-    public void readFile(){
+    public void readFile( ){
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("file/names.txt").getFile());
 
@@ -16,7 +16,7 @@ public class FileReader {
             fileLines.forEach(System.out::println);
         }
         catch (IOException e){
-            System.out.println("O no!Something went wrong" + e);
+            //throw new FileReaderException();
         }
         finally {
             System.out.println("I am gonna be here...always!");
