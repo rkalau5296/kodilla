@@ -3,9 +3,9 @@ package com.kodilla.exception.test;
 public class ExceptionHandling {
 
     public static void main(String[] args) {
-        FileReaderException fileReaderException = new FileReaderException();
+        SecondChallenge secondChallenge = new SecondChallenge();
         try {
-            fileReaderException.probablyIWillThrowException(3,1.5);
+            secondChallenge.probablyIWillThrowException(3,1.5);
         }
         catch (Exception a){
             System.out.println("Illegal parameters " + a);
