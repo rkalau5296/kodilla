@@ -42,7 +42,6 @@ class CalculateStatistics  {
         avgQuantityOfPostsPerUser = statistics.postsCount()/statistics.usersNames().size();
         avgQuantityOfCommentsPerUser = statistics.commentsCount()/statistics.usersNames().size();
         avgQuantityOfCommentsPerPost = statistics.commentsCount()/statistics.postsCount();
-
     }
 
     public String ShowStatistics(){
