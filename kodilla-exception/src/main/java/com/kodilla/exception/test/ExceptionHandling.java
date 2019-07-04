@@ -8,10 +8,10 @@ public class ExceptionHandling {
             fileReaderException.probablyIWillThrowException(3,1.5);
         }
         catch (Exception a){
-            System.out.println("WTF? " + a);
+            System.out.println("Illegal parameters " + a);
         }
         finally {
-            System.out.println("Get out of here!");
+            System.out.println("Do what you can.");
         }
     }
 
