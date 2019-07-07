@@ -13,11 +13,11 @@ public class LogicFlightRunner {
 
         HashMap<String, Boolean> availableAirports = new HashMap<String, Boolean>();
 
-        availableAirports.put(flight1.getDepartureAirport(), true);
-        availableAirports.put(flight2.getDepartureAirport(), true);
-        availableAirports.put(flight3.getDepartureAirport(), true);
-        availableAirports.put(flight4.getDepartureAirport(), true);
-        availableAirports.put(flight5.getDepartureAirport(), true);
+        availableAirports.put(flight1.getArrivalAirport(), true);
+        availableAirports.put(flight2.getArrivalAirport(), true);
+        availableAirports.put(flight3.getArrivalAirport(), true);
+        availableAirports.put(flight4.getArrivalAirport(), true);
+        availableAirports.put(flight5.getArrivalAirport(), true);
 
         LogicFlight logicFlight = new LogicFlight(availableAirports);
 
