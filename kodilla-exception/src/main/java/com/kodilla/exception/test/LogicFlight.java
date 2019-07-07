@@ -3,13 +3,24 @@ package com.kodilla.exception.test;
 import java.util.HashMap;
 
 public class LogicFlight {
-    public void findFilght(Flight flight){
-        HashMap<String, Boolean> availableAirports = new HashMap<>();
-        availableAirports.put("Okecie", true);
-        availableAirports.put("Modlin", false);
-        availableAirports.put("Heatrow", true);
-        availableAirports.put("Gatwick", false);
-        availableAirports.put("JFK", true);
+    HashMap<String, Boolean> availableAirports;
 
+    public LogicFlight(HashMap<String, Boolean> availableAirports) {
+        this.availableAirports = availableAirports;
     }
+
+    public void findFlight (Flight flight) throws RouteNotFoundException {
+
+        if (availableAirports.containsKey(flight.getArrivalAirport())) {
+            if(availableAirports.get(flight.getArrivalAirport())) {
+                System.out.println("Flight found: This airport is avalible from your departure place");
+            }
+            else System.out.println("Sorry! Arrival airport is not avalible from your departure place");
+        }
+        else {
+            throw new RouteNotFoundException();
+        }
+    }
+
 }
+
