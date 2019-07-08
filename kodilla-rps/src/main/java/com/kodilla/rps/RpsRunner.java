@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class RpsRunner {
     public static void main(String[] args){
+        rps();
+    }
+    public static void rps(){
         Scanner myObj = new Scanner(System.in);
         System.out.println("Podaj swoje imię");
         String userName = myObj.nextLine();
@@ -12,7 +15,7 @@ public class RpsRunner {
         int computerChoice;
         int userResult = 0;
         int computerResult = 0;
-        System.out.println("Ile rund będzie miała gra?");
+        System.out.println("Ile rund będzie miała gra?"); // brak warunku na wprowadzony znak zamiast liczby
         int roundQuantity = myObj.nextInt();
         System.out.println("Twoje imię to: " + userName + ". Ilosc rund po ktorych nastapi zwyciestwo to: " +  roundQuantity +".");
         System.out.println("klawisz 1 - zagranie \"kamień\",\n" +
@@ -45,7 +48,7 @@ public class RpsRunner {
                 if(userChoice=='y')
                 {
                     System.out.println("Zacznamy od nowa.");
-                    continue;
+                    rps();
                 }
                 else if(userChoice=='n')
                     continue;
@@ -63,23 +66,12 @@ public class RpsRunner {
             {
                 System.out.println("Remis. Bez punktu dla każdego");
             }
-            if(       (userChoice == '1' && computerChoice==2)
-                    ||(userChoice == '2' && computerChoice==3)
-                    ||(userChoice == '3' && computerChoice==1)
-                    ||(computerChoice == '1' && userChoice==3)
-                    ||(computerChoice == '3' && userChoice==2)
-                    ||(computerChoice == '2' && userChoice==1))
+            if((userChoice == '1' && computerChoice==2)||(userChoice == '2' && computerChoice==3)||(userChoice == '3' && computerChoice==1))
             {
                 System.out.println("Przegrałeś runde. Punkt dla komputera.");
                 computerResult = computerResult+1;
             }
-            if(       (computerChoice == '1' && userChoice==2)
-                    ||(computerChoice == '2' && userChoice==3)
-                    ||(computerChoice == '3' && userChoice==1)
-                    ||(userChoice == '1' && computerChoice==3)
-                    ||(userChoice == '3' && computerChoice==2)
-                    ||(userChoice == '2' && computerChoice==1)
-                    )
+            if((userChoice == '1' && computerChoice==3)||(userChoice == '3' && computerChoice==2)||(userChoice == '2' && computerChoice==1))
             {
                 System.out.println("Wygrałeś runde. Punkt dla Ciebie.");
                 userResult = userResult+1;
