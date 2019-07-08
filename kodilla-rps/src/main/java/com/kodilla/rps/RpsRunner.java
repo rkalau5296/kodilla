@@ -21,7 +21,6 @@ public class RpsRunner {
                 "klawisz x - zakończenie gry, poprzedzone pytaniem \"Czy na pewno zakończyć grę?\",\n" +
                 "klawisz n - uruchomienie gry od nowa, poprzedzone pytaniem \"Czy na pewno zakończyć aktualną grę?\",");
 
-        boolean end = false;
         int actualRound = 1;
 
         while(roundQuantity>0){
@@ -32,7 +31,7 @@ public class RpsRunner {
             Random random = new Random();
             int x = 1;
             int y = 3;
-            computerChoice = random.nextInt((y-x+1)+x );
+            computerChoice = random.nextInt(3)+1;
             System.out.println( "Komputer wybrał: " + computerChoice);
             if((userChoice == 1 && computerChoice == 1)||(userChoice == 2 && computerChoice == 2)||(userChoice == 3 && computerChoice == 3))
             {
@@ -46,7 +45,17 @@ public class RpsRunner {
                 System.out.println("Wygrałeś runde. Punkt dla Ciebie.");
                 userResult = userResult+1;
             }
+
+            actualRound++;
             roundQuantity--;
         }
+        if(computerResult>userResult){
+            System.out.println(userName + " Niestety, ale wygrał komputer: " + computerResult + " : " + userResult );
+        }
+        else if (computerResult<userResult) {
+            System.out.println(userName + " Brawo! Wygrałeś z komputerem: " + userResult + " : " + computerResult);
+        }
+        else
+            System.out.println(userName + " Remis: " +  + userResult + " : " + computerResult);
     }
 }
