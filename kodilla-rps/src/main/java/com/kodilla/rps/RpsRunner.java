@@ -44,11 +44,16 @@ public class RpsRunner {
                 userChoice = myObj.next().charAt(0);
                 if(userChoice=='y')
                 {
-
+                    System.out.println("Zacznamy od nowa.");
+                    continue;
                 }
                 else if(userChoice=='n')
                     continue;
                 else System.out.println("zły wybór");
+            }
+            if(!(userChoice == '1'||userChoice == '2'||userChoice == '3')){
+                System.out.println("Podałeś znak/liczbę z poza zakresu liczbowego 1-3. Podaj prawidłowy klawisz.");
+                continue;
             }
             System.out.println("Wybrałeś: " + userChoice);
             Random random = new Random();
@@ -58,15 +63,27 @@ public class RpsRunner {
             {
                 System.out.println("Remis. Bez punktu dla każdego");
             }
-            if((userChoice == '1' && computerChoice==2)||(userChoice == '2' && computerChoice==3)||(userChoice == '3' && computerChoice== 1)){
+            if(       (userChoice == '1' && computerChoice==2)
+                    ||(userChoice == '2' && computerChoice==3)
+                    ||(userChoice == '3' && computerChoice==1)
+                    ||(computerChoice == '1' && userChoice==3)
+                    ||(computerChoice == '3' && userChoice==2)
+                    ||(computerChoice == '2' && userChoice==1))
+            {
                 System.out.println("Przegrałeś runde. Punkt dla komputera.");
                 computerResult = computerResult+1;
             }
-            if((computerChoice == '1' && userChoice==2)||(computerChoice == '2' && userChoice==3)||(computerChoice == '3' && userChoice== 1)){
+            if(       (computerChoice == '1' && userChoice==2)
+                    ||(computerChoice == '2' && userChoice==3)
+                    ||(computerChoice == '3' && userChoice==1)
+                    ||(userChoice == '1' && computerChoice==3)
+                    ||(userChoice == '3' && computerChoice==2)
+                    ||(userChoice == '2' && computerChoice==1)
+                    )
+            {
                 System.out.println("Wygrałeś runde. Punkt dla Ciebie.");
                 userResult = userResult+1;
             }
-
             actualRound++;
             roundQuantity--;
         }
