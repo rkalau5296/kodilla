@@ -17,7 +17,7 @@ public class RpsRunner {
                     return n;
 
             } catch (Exception e) {
-                System.out.println("It is not a number, try again.");
+                System.out.println("To nie jest liczba. Spróbuj jeszcze raz.");
             }
         }
 
