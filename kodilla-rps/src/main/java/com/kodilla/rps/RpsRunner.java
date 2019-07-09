@@ -1,6 +1,5 @@
 package com.kodilla.rps;
 
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -15,9 +14,8 @@ public class RpsRunner {
             String s = myObj.nextLine();
             try {
                 int n = Integer.parseInt(s);
-                if (n > 0 && n < 10)
                     return n;
-                System.out.println("Wrong number (1-9), try again.");
+
             } catch (Exception e) {
                 System.out.println("It is not a number, try again.");
             }
@@ -136,5 +134,5 @@ public class RpsRunner {
         instructionDisplay(userName, numberOfRounds);
         rpsPointsAssignement(numberOfRounds, actualRound, myObj, userChoice, computerChoice, computerResult, userResult, userName);
     }
-    
+
 }
