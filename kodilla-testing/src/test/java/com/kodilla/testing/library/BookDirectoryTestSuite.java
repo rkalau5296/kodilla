@@ -45,14 +45,32 @@ public class BookDirectoryTestSuite {
         Assert.assertEquals(15, theListOfBooks15.size());
         Assert.assertEquals(0, theListOfBooks40.size());
     }
+    @Test
+    public void testListBooksInHandsOfReturnList(){
+        //Given
+        LibraryDatabase libraryDatabaseMock = mock(LibraryDatabase.class);
+        BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
+        List<Book> resultListOf0Books  = new ArrayList<Book>();
+        List<Book> resultListOf1Books = generateListOfNBooks(1);
+        List<Book> resultListOf5Books = generateListOfNBooks(5);
+        LibraryUser libraryUser1 = new LibraryUser("John", "Smith", "45010163574");
+        LibraryUser libraryUser2 = new LibraryUser("Jack", "Adams", "45010163572");
+        LibraryUser libraryUser3 = new LibraryUser("Marie", "Anderson", "45010163524");
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser1))
+                .thenReturn(resultListOf0Books);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser2))
+                .thenReturn(resultListOf1Books);
+        when(libraryDatabaseMock.listBooksInHandsOf(libraryUser3))
+                .thenReturn(resultListOf5Books);
 
-//    @Test
-//    public void testListBooksWithConditionMoreThan20() {
-//        Assert.assertTrue(false);
-//    }
-//
-//    @Test
-//    public void testListBooksWithConditionFragmentShorterThan3() {
-//        Assert.assertTrue(false);
-//    }
+        // When
+        List<Book> theListOfBooks0 = bookLibrary.listBooksInHandsOf(libraryUser1);
+        List<Book> theListOfBooks1 = bookLibrary.listBooksInHandsOf(libraryUser2);
+        List<Book> theListOfBooks5 = bookLibrary.listBooksInHandsOf(libraryUser3);
+
+        // Then
+        Assert.assertEquals(0, theListOfBooks0.size());
+        Assert.assertEquals(1, theListOfBooks1.size());
+        Assert.assertEquals(5, theListOfBooks5.size());
+    }
 }
