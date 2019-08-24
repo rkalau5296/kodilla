@@ -6,6 +6,6 @@ public class Main {
         MovieStore movieStore = new MovieStore();
         movieStore.getMovies().entrySet().stream()
                 .flatMap(a->a.getValue().stream())
-                .forEach(System.out::println);
+                .forEach(System.out::print );
     }
 }
