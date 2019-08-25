@@ -6,6 +6,7 @@ public class Main {
         MovieStore movieStore = new MovieStore();
         movieStore.getMovies().entrySet().stream()
                 .flatMap(a->a.getValue().stream())
+                .map(s->s.concat("!"))
                 .forEach(System.out::print );
     }
 }
