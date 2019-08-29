@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.trial;
 
 public class Main {
     public static void main(String[] args) {
