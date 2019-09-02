@@ -6,5 +6,11 @@ public class OrderProduct {
     public OrderProduct(DistributorService distributorService) {
         this.distributorService = distributorService;
     }
+    public OrderDto order (final DistributorService distributorService) {
 
+        distributorService.getDistributorName();
+        distributorService.getProductAmount();
+        distributorService.getProductName();
+        return new OrderDto(distributorService, true);
+    }
 }
