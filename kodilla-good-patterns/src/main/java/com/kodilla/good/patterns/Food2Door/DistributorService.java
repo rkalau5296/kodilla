@@ -4,6 +4,6 @@ public interface DistributorService {
     String getProductName();
     double getProductAmount();
     String getDistributorName();
-    DistributorDto process(DistributorService distributorService);
+    void process();
 
 }

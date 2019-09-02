@@ -1,7 +1,8 @@
 package com.kodilla.good.patterns.Food2Door.Distributors;
 
-import com.kodilla.good.patterns.Food2Door.DistributorDto;
+
 import com.kodilla.good.patterns.Food2Door.DistributorService;
+import com.kodilla.good.patterns.Food2Door.OrderProduct;
 
 public class HealthyShop implements DistributorService {
 
@@ -30,7 +31,6 @@ public class HealthyShop implements DistributorService {
         return distributorName;
     }
 
-    public DistributorDto process(DistributorService distributorService){
-        return new DistributorDto(distributorService);
+    public void process () {
     }
 }
