@@ -1,35 +1,48 @@
 package com.kodilla.good.patterns.Food2Door.Distributors;
 
-import com.kodilla.good.patterns.Food2Door.DistributorService;
-import com.kodilla.good.patterns.Food2Door.OrderProduct;
+import com.kodilla.good.patterns.Food2Door.*;
 
-public class ExtraFoodShop implements DistributorService {
+public class ExtraFoodShop implements DistributorService, InformSupplier, OrderRepository, OrderService {
 
-    String productName;
-    double productAmount;
-    String distributorName;
+    InformSupplier informSupplier;
+    OrderRepository orderRepository;
+    OrderService orderService;
 
-    public ExtraFoodShop(String productName, double productAmount, String distributorName) {
-        this.productName = productName;
-        this.productAmount = productAmount;
-        this.distributorName = distributorName;
+    public ExtraFoodShop(InformSupplier informSupplier, OrderRepository orderRepository, OrderService orderService) {
+        this.informSupplier = informSupplier;
+        this.orderRepository = orderRepository;
+        this.orderService = orderService;
     }
 
     @Override
     public String getProductName() {
-        return productName;
+
+        return informSupplier.getProductName();
     }
 
     @Override
     public double getProductAmount() {
-        return productAmount;
+
+        return informSupplier.getProductAmount();
     }
 
     @Override
     public String getDistributorName() {
-        return distributorName;
+
+        return informSupplier.getDistributorName();
     }
 
     public void process () {
+
+    }
+
+    public boolean createOrder(OrderDto orderDto) {
+
+        return true;
+    }
+
+    public boolean order(OrderDto orderDto) {
+
+        return true;
     }
 }
