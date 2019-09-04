@@ -10,7 +10,7 @@ public class Flight {
 
         Map<String, String> Flights = new HashMap<>();
         Flights.put("Kraków", "Poznań");
-        Flights.put("Warszawa", "Warszawa");
+        Flights.put("Warszawa", "Poznań");
         Flights.put("lódź", "Szczecin");
         Flights.put("Poznań", "lódź");
         Flights.put("Szczecin", "Katowice");
