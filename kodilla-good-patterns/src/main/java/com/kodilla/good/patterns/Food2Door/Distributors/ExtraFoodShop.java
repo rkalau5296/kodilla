@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.Food2Door.Distributors;
 
 import com.kodilla.good.patterns.Food2Door.*;
 
-public class ExtraFoodShop implements DistributorService, InformSupplier, OrderRepository, OrderService {
+public class ExtraFoodShop implements DistributorService {
 
     InformSupplier informSupplier;
     OrderRepository orderRepository;

@@ -2,26 +2,25 @@ package com.kodilla.good.patterns.Flights;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+
 import java.util.Map;
 
 public class Flight {
-    public Map<String, List<String>> getFlight() {
+    public Map<String, String> getFlight() {
 
-        List<String> City = new ArrayList<>();
-        City.add("Kraków");
-        City.add("Gdańsk");
-        City.add("Warszawa");
-        City.add("lódź");
-        City.add("Szczecin");
-        City.add("Poznań");
-        City.add("Wrocław");
-        City.add("Katowice");
+        Map<String, String> Flights = new HashMap<>();
+        Flights.put("Kraków", "Poznań");
+        Flights.put("Warszawa", "Warszawa");
+        Flights.put("lódź", "Szczecin");
+        Flights.put("Poznań", "lódź");
+        Flights.put("Szczecin", "Katowice");
+        Flights.put("Olsztyn", "Opole");
+        Flights.put("Katowice", "Radom");
+        Flights.put("Radom", "Poznań");
+        Flights.put("Kielce", "Bydgoszcz");
+        Flights.put("Bydgoszcz", "Warszawa");
+        Flights.put("Opole", "Kielce");
 
-        List<String> CityStopOver = new ArrayList<>();
-        Map<String, List<String>> booksTitlesWithTranslations = new HashMap<>();
-
-
-        return booksTitlesWithTranslations;
+        return Flights;
     }
 }
