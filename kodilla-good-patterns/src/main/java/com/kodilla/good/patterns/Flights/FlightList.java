@@ -8,10 +8,6 @@ public class FlightList {
     private Map<String, Flight> flights = new HashMap<>();
     private String connectingFlight;
 
-    public FlightList(String connectingFlight) {
-        this.connectingFlight = connectingFlight;
-    }
-
     public Map<String, Flight> getFlights() {
         return flights;
     }
@@ -23,6 +19,21 @@ public class FlightList {
         flights.put(connectingFlight, flight);
     }
 
+    public Map<String, Flight> createFlightList() {
+
+        Map<String, Flight> connectingFlightsList = new HashMap<>();
+        connectingFlightsList.put("Radom", new Flight("Kraków", "Poznań"));
+        connectingFlightsList.put("Warszawa", new Flight("lódź", "Szczecin"));
+        connectingFlightsList.put("Olsztyn", new Flight("Poznań", "lódź"));
+        connectingFlightsList.put("Tarnów", new Flight("Szczecin", "Katowice"));
+        connectingFlightsList.put("Nowy Sącz", new Flight("Olsztyn", "Opole"));
+        connectingFlightsList.put("Gdansk", new Flight("Katowice", "Radom"));
+
+        return connectingFlightsList;
+    }
+    public void displayFlightList(FlightList flightList) {
+        flightList.createFlightList().entrySet().stream().forEach(System.out::println);
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
