@@ -1,28 +1,29 @@
 package com.kodilla.good.patterns.Flights;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Flight {
     private String flightFrom;
-    private String getFlightTo;
+    private String flightTo;
+    private List<Flight> flightlist = new ArrayList<>();
 
     public Flight(String flightFrom, String getFlightTo) {
         this.flightFrom = flightFrom;
-        this.getFlightTo = getFlightTo;
+        this.flightTo = getFlightTo;
     }
 
     public String getFlightFrom() {
         return flightFrom;
     }
 
-    public String getGetFlightTo() {
-        return getFlightTo;
+    public String getFlightTo() {
+        return flightTo;
     }
 
     @Override
     public String toString() {
-        return " is connecting: " + flightFrom +
-                "-" + getFlightTo;
+        return "" + flightFrom +
+                "-" + flightTo;
     }
 
     @Override
@@ -31,18 +32,11 @@ public class Flight {
         if (o == null || getClass() != o.getClass()) return false;
         Flight flight = (Flight) o;
         return Objects.equals(flightFrom, flight.flightFrom) &&
-                Objects.equals(getFlightTo, flight.getFlightTo);
+                Objects.equals(flightTo, flight.flightTo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flightFrom, getFlightTo);
+        return Objects.hash(flightFrom, flightTo);
     }
-
-//    public Map<String, Map<String, String>> getFlight() {
-//
-//
-//    }
-
-
 }
