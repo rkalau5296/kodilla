@@ -42,6 +42,7 @@ public class Flight {
 
         return flightslist;
     }
+
     public static void findFlightsFrom (String city, List<Flight> flightsList) {
         System.out.println(flightsList.stream()
                 .filter(s->s.getFlightFrom().equals(city))
@@ -52,9 +53,10 @@ public class Flight {
                 .filter(s->s.getFlightTo().equals(city))
                 .collect(Collectors.toList()));
     }
-    public static void findConnectingFlights (String cityFrom, String cityTo, List<Flight> flightsList) {
+    public static void findConnectingFlights (String cityFrom, String cityTo, String cityVia, List<Flight> flightsList) {
         List<Flight> flightsTo = flightsList.stream()
                 .filter(s->s.getFlightTo().equals(cityTo))
+
                 .collect(Collectors.toList());
         List<Flight> flightsFrom = flightsList.stream()
                 .filter(s->s.getFlightFrom().equals(cityFrom))
@@ -62,8 +64,9 @@ public class Flight {
         List<Flight> newList = new ArrayList<>();
         newList.addAll(flightsTo);
         newList.addAll(flightsFrom);
-        newList.stream().forEach(System.out::println);
-        
+        newList.stream().filter(s->s.getFlightFrom().equals(cityVia)).forEach(System.out::println);
+        //newList.forEach(System.out::println);
+
     }
     @Override
     public boolean equals(Object o) {
