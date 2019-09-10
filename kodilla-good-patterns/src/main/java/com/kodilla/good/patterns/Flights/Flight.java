@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.Flights;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Flight {
     private String flightFrom;
@@ -25,7 +26,28 @@ public class Flight {
         return "" + flightFrom +
                 "-" + flightTo;
     }
+    public static List<Flight> createFlightList() {
+        List<Flight> flightslist = new ArrayList<>();
 
+        flightslist.add(new Flight("Warszawa", "Kraków"));
+        flightslist.add(new Flight("Warszawa", "Gdańsk"));
+        flightslist.add(new Flight("Kraków", "Gdańsk"));
+        flightslist.add(new Flight("Gdańsk", "Wrocław"));
+        flightslist.add(new Flight("Gdańsk", "Katowice"));
+        flightslist.add(new Flight("Kraków", "Szczecin"));
+        flightslist.add(new Flight("Katowice", "Warszawa"));
+        flightslist.add(new Flight("Katowice", "Kraków"));
+        flightslist.add(new Flight("Warszawa", "Poznań"));
+        flightslist.add(new Flight("Radom", "Szczecin"));
+
+        return flightslist;
+    }
+    public static void findFlightsFrom (String city, List<Flight> flightsList) {
+        System.out.println(flightsList.stream().filter(s->s.getFlightFrom().equals(city)).collect(Collectors.toList()));
+    }
+    public static void findFlightsTo (String city, List<Flight> flightsList) {
+        System.out.println(flightsList.stream().filter(s->s.getFlightTo().equals(city)).collect(Collectors.toList()));
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
