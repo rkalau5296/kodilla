@@ -4,13 +4,14 @@ public class OrderProduct {
     DistributorService distributorService;
 
     public OrderProduct(DistributorService distributorService) {
+
         this.distributorService = distributorService;
     }
-    public OrderDto order (final DistributorService distributorService) {
-
-        distributorService.getDistributorName();
-        distributorService.getProductAmount();
+    public void order (final DistributorService distributorService) {
         distributorService.getProductName();
-        return new OrderDto(distributorService, true);
+        distributorService.getProductAmount();
+        distributorService.getDistributorName();
+        distributorService.process();
+
     }
 }
