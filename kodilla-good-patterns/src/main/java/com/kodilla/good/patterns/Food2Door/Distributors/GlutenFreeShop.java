@@ -33,16 +33,6 @@ public class GlutenFreeShop implements DistributorService {
     }
 
     public void process () {
-
-    }
-
-    public boolean createOrder(OrderDto orderDto) {
-
-        return true;
-    }
-
-    public boolean order(OrderDto orderDto) {
-
-        return true;
+        System.out.println("This is the GlutenFreeShop order realisation ");
     }
 }
