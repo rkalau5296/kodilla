@@ -14,7 +14,7 @@ public final class Library {
     public Library() {
         // do nothing
     }
-    @Autowired
+
     public Library(final LibraryDbController libraryDbController) {
         this.libraryDbController = libraryDbController;
     }
