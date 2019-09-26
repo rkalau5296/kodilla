@@ -12,8 +12,8 @@ public class DrivingTask implements Task {
     }
 
     @Override
-    public void executeTask() {
-        System.out.println("Travel is done");
+    public String executeTask() {
+        return "Travel is done";
     }
 
     @Override
@@ -23,6 +23,6 @@ public class DrivingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        return true;
     }
 }

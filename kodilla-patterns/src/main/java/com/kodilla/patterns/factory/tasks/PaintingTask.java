@@ -13,8 +13,8 @@ public class PaintingTask implements Task {
     }
 
     @Override
-    public void executeTask() {
-        System.out.println("Painting is done");
+    public String executeTask() {
+        return "Painting is done";
     }
 
     @Override
@@ -24,6 +24,6 @@ public class PaintingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        return true;
     }
 }

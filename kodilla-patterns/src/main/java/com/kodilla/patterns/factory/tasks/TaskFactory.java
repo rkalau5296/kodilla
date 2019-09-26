@@ -5,7 +5,7 @@ public final class TaskFactory {
     public static final String PAINTING_TASK = "PaintingTask";
     public static final String SHOPPING_TASK = "ShoppingTask";
 
-    public final Task makeShape(final String taskClass) {
+    public final Task makeTask(final String taskClass) {
         switch (taskClass) {
             case DRIVING_TASK:
                 return new DrivingTask("Travel", "Warsaw", "Car");

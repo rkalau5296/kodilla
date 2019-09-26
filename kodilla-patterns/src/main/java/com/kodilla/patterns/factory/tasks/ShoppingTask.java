@@ -12,8 +12,8 @@ public class ShoppingTask implements Task {
     }
 
     @Override
-    public void executeTask() {
-        System.out.println("Shopping is done");
+    public String executeTask() {
+        return "Shopping is done";
     }
 
     public String getTaskName() {
@@ -22,7 +22,7 @@ public class ShoppingTask implements Task {
 
     @Override
     public boolean isTaskExecuted() {
-        return false;
+        return true;
     }
 
 }
