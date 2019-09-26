@@ -1,6 +1,7 @@
 package com.kodilla.patterns.strategy.social;
 
 import com.kodilla.patterns.strategy.social.publishers.FacebookPublisher;
+import com.kodilla.patterns.strategy.social.publishers.SnapchatPublisher;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -23,5 +24,20 @@ public class UserTestSuite {
         Assert.assertEquals("This is Facebook.", peterShouldPost);
         Assert.assertEquals("This is Snapchat.", robertShouldPost);
         Assert.assertEquals("This is Twitter.", mikeShouldPost);
+    }
+    @Test
+    public void testIndividualSharingStrategy(){
+        //Given
+        User peter = new Millenials("Peter Johnson");
+
+        //When
+        String peterShouldPost = peter.sharePost();
+        System.out.println("Peter should: " + peterShouldPost);
+        peter.setSocialPublisher(new SnapchatPublisher());
+        peterShouldPost = peter.sharePost();
+        System.out.println("Peter now should: " + peterShouldPost);
+
+        //Then
+        Assert.assertEquals("This is Snapchat.", peterShouldPost);
     }
 }
