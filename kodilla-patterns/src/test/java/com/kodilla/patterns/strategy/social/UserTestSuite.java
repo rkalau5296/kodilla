@@ -1,6 +1,7 @@
 package com.kodilla.patterns.strategy.social;
 
 import com.kodilla.patterns.strategy.social.publishers.FacebookPublisher;
+import org.junit.Assert;
 import org.junit.Test;
 
 public class UserTestSuite {
@@ -18,5 +19,9 @@ public class UserTestSuite {
         System.out.println("Robert should: " + robertShouldPost);
         String mikeShouldPost = mike.sharePost();
         System.out.println("Mike should: " + mikeShouldPost);
+
+        Assert.assertEquals("This is Facebook.", peterShouldPost);
+        Assert.assertEquals("This is Snapchat.", robertShouldPost);
+        Assert.assertEquals("This is Twitter.", mikeShouldPost);
     }
 }
