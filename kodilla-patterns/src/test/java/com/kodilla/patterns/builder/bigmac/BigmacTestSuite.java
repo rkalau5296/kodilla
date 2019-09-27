@@ -14,6 +14,7 @@ public class BigmacTestSuite {
                 .bun("With sezam")
                 .sauce("1000 island")
                 .ingredient("Chilli")
+                .burgers("Beef")
                 .build();
         System.out.println(bigmac);
         //When
