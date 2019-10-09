@@ -3,33 +3,35 @@ package com.kodilla.spring.portfolio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Scope;
 
 public class BoardConfig {
     @Autowired
-    @Qualifier("board1")
-    Board board;
+    @Qualifier("toDoList")
+    TaskList toDoList;
+    TaskList inProgressList;
+    TaskList doneList;
 
     @Bean
-    public TaskList getTaskList() {
+    public Board getTaskList() {
+        return new Board(toDoList, inProgressList, doneList);
+    }
+
+    @Bean(name = "toDoList")
+    @Scope("prototype")
+    public TaskList getToDoList() { return new TaskList(); }
+
+    @Bean(name = "inProgressList")
+    @Scope("prototype")
+    //@Conditional()
+    public TaskList getInProgressList() {
         return new TaskList();
     }
 
-    @Bean(name = "board1")
+    @Bean(name = "doneList")
     @Scope("prototype")
-    public Board getBoardOne() {
-        return new Board();
-    }
-
-    @Bean(name = "board2")
-    @Scope("prototype")
-    public Board getBoardTwo() {
-        return new Board();
-    }
-
-    @Bean(name = "board3")
-    @Scope("prototype")
-    public Board getBoardThree() {
-        return new Board();
+    public TaskList getDoneList() {
+        return new TaskList();
     }
 }

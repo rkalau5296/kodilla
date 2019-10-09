@@ -12,4 +12,9 @@ public class TaskList {
     public List<String> getTasks() {
         return tasks;
     }
+
+    @Override
+    public String toString() {
+        return tasks + "";
+    }
 }

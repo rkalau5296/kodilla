@@ -5,6 +5,12 @@ public class Board {
     TaskList inProgressList;
     TaskList doneList;
 
+    public Board(TaskList toDoList, TaskList inProgressList, TaskList doneList) {
+        this.toDoList = toDoList;
+        this.inProgressList = inProgressList;
+        this.doneList = doneList;
+    }
+
     public TaskList getToDoList() {
         return toDoList;
     }
@@ -15,5 +21,14 @@ public class Board {
 
     public TaskList getDoneList() {
         return doneList;
+    }
+
+    @Override
+    public String toString() {
+        return "Board{" +
+                "toDoList=" + toDoList +
+                ", inProgressList=" + inProgressList +
+                ", doneList=" + doneList +
+                '}';
     }
 }
