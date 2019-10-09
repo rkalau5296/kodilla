@@ -10,7 +10,9 @@ public class BoardConfig {
     @Autowired
     @Qualifier("toDoList")
     TaskList toDoList;
+    @Autowired
     TaskList inProgressList;
+    @Autowired
     TaskList doneList;
 
     @Bean
@@ -19,18 +21,17 @@ public class BoardConfig {
     }
 
     @Bean(name = "toDoList")
-    @Scope("prototype")
+
     public TaskList getToDoList() { return new TaskList(); }
 
     @Bean(name = "inProgressList")
-    @Scope("prototype")
-    //@Conditional()
+
     public TaskList getInProgressList() {
         return new TaskList();
     }
 
     @Bean(name = "doneList")
-    @Scope("prototype")
+
     public TaskList getDoneList() {
         return new TaskList();
     }
