@@ -49,7 +49,6 @@ public class DbManagerTestSuite {
         ResultSet rs = statement.executeQuery(sqlQuery);
 
         //Then
-        //Then
         int counter = 0;
         while(rs.next()) {
             System.out.println(rs.getString("FIRSTNAME") + ", " +
