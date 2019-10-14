@@ -11,8 +11,7 @@ public class TaskList {
     private String listName;
     private String description;
 
-    public TaskList(int id, String listName, String description) {
-        this.id = id;
+    public TaskList(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }
