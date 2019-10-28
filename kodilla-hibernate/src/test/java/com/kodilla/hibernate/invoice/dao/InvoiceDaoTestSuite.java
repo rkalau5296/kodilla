@@ -39,13 +39,13 @@ public class InvoiceDaoTestSuite {
         int id = invoice.getId();
 
         //Then
-        Assert.assertNotEquals(0, id);
+        Assert.assertEquals(45, id);
 
-//        //CleanUp
-//        try{
-//            invoiceDao.deleteById(String.valueOf(id));
-//        }catch (Exception o) {
-//            //do nothing
-//        }
+        //CleanUp
+        try{
+            invoiceDao.deleteById(id);
+        }catch (Exception o) {
+            //do nothing
+        }
     }
 }
