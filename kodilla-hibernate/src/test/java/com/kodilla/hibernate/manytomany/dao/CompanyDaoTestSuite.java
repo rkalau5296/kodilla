@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
@@ -63,6 +65,77 @@ public class CompanyDaoTestSuite {
         //    //do nothing
         //}
     }
+//    @Test
+//    public void testSearchingEmployeeByName(){
+//        //Given
+//        Employee johnSmith = new Employee("John", "Smith");
+//        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+//        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+//
+//        Company softwareMachine = new Company("Software Machine");
+//        Company dataMaesters = new Company("Data Maesters");
+//        Company greyMatter = new Company("Grey Matter");
+//
+//        softwareMachine.getEmployees().add(johnSmith);
+//        dataMaesters.getEmployees().add(stephanieClarckson);
+//        dataMaesters.getEmployees().add(lindaKovalsky);
+//        greyMatter.getEmployees().add(johnSmith);
+//        greyMatter.getEmployees().add(lindaKovalsky);
+//
+//        johnSmith.getCompanies().add(softwareMachine);
+//        johnSmith.getCompanies().add(greyMatter);
+//        stephanieClarckson.getCompanies().add(dataMaesters);
+//        lindaKovalsky.getCompanies().add(dataMaesters);
+//        lindaKovalsky.getCompanies().add(greyMatter);
+//
+//        //When
+//        List<Employee> smiths = employeeDao.retrieveEmployeeNames("Smith");
+//        List<Employee> clarcksons = employeeDao.retrieveEmployeeNames("Smith");
+//        List<Employee> kovalskys = employeeDao.retrieveEmployeeNames("Smith");
+//
+//        //Then
+//        Assert.assertNotEquals(0, smiths.size());
+//        Assert.assertNotEquals(0, clarcksons.size());
+//        Assert.assertNotEquals(0, kovalskys.size());
+//
+//    }
+//    @Test
+//    public void testRetrieveCompaniesWhereFirstThreeCharsAreEqualToParam(){
+//        //Given
+//        Employee johnSmith = new Employee("John", "Smith");
+//        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+//        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+//
+//        Company softwareMachine = new Company("Software Machine");
+//        Company dataMaesters = new Company("Data Maesters");
+//        Company greyMatter = new Company("Grey Matter");
+//
+//        softwareMachine.getEmployees().add(johnSmith);
+//        dataMaesters.getEmployees().add(stephanieClarckson);
+//        dataMaesters.getEmployees().add(lindaKovalsky);
+//        greyMatter.getEmployees().add(johnSmith);
+//        greyMatter.getEmployees().add(lindaKovalsky);
+//
+//        johnSmith.getCompanies().add(softwareMachine);
+//        johnSmith.getCompanies().add(greyMatter);
+//        stephanieClarckson.getCompanies().add(dataMaesters);
+//        lindaKovalsky.getCompanies().add(dataMaesters);
+//        lindaKovalsky.getCompanies().add(greyMatter);
+//
+//        //When
+////        List<Employee> smiths = employeeDao.retrieveEmployeeNames("Smith");
+////        List<Employee> clarcksons = employeeDao.retrieveEmployeeNames("Smith");
+////        List<Employee> kovalskys = employeeDao.retrieveEmployeeNames("Smith");
+//        List<Company> companiesSof = companyDao.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam("Sof");
+//        List<Company> companiesDat = companyDao.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam("Dat");
+//        List<Company> companiesGre = companyDao.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam("Gre");
+//
+//        //Then
+//        Assert.assertNotEquals(0, companiesSof.size());
+//        Assert.assertNotEquals(0, companiesDat.size());
+//        Assert.assertNotEquals(0, companiesGre.size());
+//
+//    }
 
 
 }
