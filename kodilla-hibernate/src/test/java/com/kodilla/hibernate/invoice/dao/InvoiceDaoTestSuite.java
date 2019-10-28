@@ -22,8 +22,7 @@ public class InvoiceDaoTestSuite {
 
     @Autowired
     private InvoiceDao invoiceDao;
-    @Autowired
-    private ItemDao itemDao;
+
 
     @Test
     public void InvoiceDaoTestSuite() {
@@ -39,7 +38,7 @@ public class InvoiceDaoTestSuite {
         int id = invoice.getId();
 
         //Then
-        Assert.assertEquals(45, id);
+        Assert.assertEquals(47, id);
 
         //CleanUp
         try{
