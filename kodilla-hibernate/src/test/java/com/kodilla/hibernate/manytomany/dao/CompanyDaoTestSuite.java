@@ -15,6 +15,9 @@ public class CompanyDaoTestSuite {
     @Autowired
     CompanyDao companyDao;
 
+    @Autowired
+    EmployeeDao employeeDao;
+
     @Test
     public void testSaveManyToMany(){
         //Given

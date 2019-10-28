@@ -4,7 +4,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-
+@NamedNativeQuery(
+        name = "Company.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam",
+        query = "SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME like name = :COMPANY_NAME%",
+        resultClass = Company.class
+)
 @Entity
 @Table(name = "COMPANIES")
 public class Company {
