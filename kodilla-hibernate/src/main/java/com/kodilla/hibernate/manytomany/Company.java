@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam",
-        query = "SELECT * FROM COMPANIES" + " WHERE COMPANY_NAME like 'name = :COMPANY_NAME%'",
+        query = "SELECT * FROM COMPANIES" + " WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :name",
         resultClass = Company.class
 )
 @Entity

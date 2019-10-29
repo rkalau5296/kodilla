@@ -4,10 +4,12 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Entity;
+
 @NamedQueries(
         @NamedQuery(
                 name="Employee.retrieveEmployeeNames",
-                query = "FROM EMPLOYEES WHERE lastname = :LASTNAME"
+                query = "FROM Employee WHERE lastname = :name"
         )
 )
 @Entity
