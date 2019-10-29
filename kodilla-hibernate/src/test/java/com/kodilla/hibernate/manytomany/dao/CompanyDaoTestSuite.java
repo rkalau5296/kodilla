@@ -95,9 +95,9 @@ public class CompanyDaoTestSuite {
         List<Employee> kovalskys = employeeDao.retrieveEmployeeNames("Smith");
 
         //Then
-        Assert.assertEquals(0, smiths.size());
-        Assert.assertEquals(0, clarcksons.size());
-        Assert.assertEquals(0, kovalskys.size());
+        Assert.assertNotEquals(0, smiths.size());
+        Assert.assertNotEquals(0, clarcksons.size());
+        Assert.assertNotEquals(0, kovalskys.size());
 
     }
     @Test
@@ -129,9 +129,9 @@ public class CompanyDaoTestSuite {
         List<Company> companiesGre = companyDao.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam("Gre");
 
         //Then
-        Assert.assertEquals(0, companiesSof.size());
-        Assert.assertEquals(0, companiesDat.size());
-        Assert.assertEquals(0, companiesGre.size());
+        Assert.assertNotEquals(0, companiesSof.size());
+        Assert.assertNotEquals(0, companiesDat.size());
+        Assert.assertNotEquals(0, companiesGre.size());
 
 
     }
