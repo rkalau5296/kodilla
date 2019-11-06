@@ -23,28 +23,47 @@ public class InvoiceDaoTestSuite {
     @Autowired
     private InvoiceDao invoiceDao;
 
+    @Autowired
+    private ProductDao productDao;
+
+    @Autowired
+    private ItemDao itemDao;
 
     @Test
     public void InvoiceDaoTestSuite() {
         //Given
-
-        Item item = new Item(new Product("Bread"), new BigDecimal(5), 1, new BigDecimal(3));
+        Product product = new Product("Bread");
+        Item item = new Item(product, new BigDecimal(5), 1, new BigDecimal(3));
+        Item item2 = new Item(product, new BigDecimal(5), 1, new BigDecimal(3));
         Invoice invoice = new Invoice("1");
+
         invoice.getItems().add(item);
+        invoice.getItems().add(item2);
         item.setInvoice(invoice);
+        item2.setInvoice(invoice);
+
+        product.getItems().add(item);
+        product.getItems().add(item2);
+        item.setProduct(product);
+        item2.setProduct(product);
+
 
         //When
         invoiceDao.save(invoice);
+        productDao.save(product);
+        itemDao.save(item);
+
         int id = invoice.getId();
 
         //Then
-        Assert.assertEquals(47, id);
+
+        Assert.assertNotEquals(0, id);
 
         //CleanUp
-        try{
-            invoiceDao.deleteById(id);
-        }catch (Exception o) {
-            //do nothing
-        }
+//        try{
+//            invoiceDao.deleteById(id);
+//        }catch (Exception o) {
+//            //do nothing
+//        }
     }
 }
