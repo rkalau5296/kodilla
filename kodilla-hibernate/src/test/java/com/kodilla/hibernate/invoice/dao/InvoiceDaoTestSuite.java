@@ -52,6 +52,7 @@ public class InvoiceDaoTestSuite {
         invoiceDao.save(invoice);
         productDao.save(product);
         itemDao.save(item);
+        itemDao.save(item2);
 
         int invoiceId = invoice.getId();
 

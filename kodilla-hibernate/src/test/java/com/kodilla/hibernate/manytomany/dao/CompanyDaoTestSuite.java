@@ -52,10 +52,25 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
+        employeeDao.save(johnSmith);
+        int johnSmithId = johnSmith.getId();
+        employeeDao.save(johnSmith);
+        int stephanieClarcksonId = stephanieClarckson.getId();
+        employeeDao.save(johnSmith);
+        int lindaKovalskyId = lindaKovalsky.getId();
+
+
         //Then
         Assert.assertNotEquals(0, softwareMachineId);
         Assert.assertNotEquals(0, dataMaestersId);
         Assert.assertNotEquals(0, greyMatterId);
+        Assert.assertNotEquals(0, companyDao.getById(softwareMachineId));
+        Assert.assertNotEquals(0, companyDao.getById(dataMaestersId));
+        Assert.assertNotEquals(0, companyDao.getById(greyMatterId));
+        Assert.assertNotEquals(0, employeeDao.getById(johnSmithId));
+        Assert.assertNotEquals(0, employeeDao.getById(stephanieClarcksonId));
+        Assert.assertNotEquals(0, employeeDao.getById(lindaKovalskyId));
+
 
         //CleanUp
         //try {
