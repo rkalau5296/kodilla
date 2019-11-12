@@ -53,12 +53,17 @@ public class InvoiceDaoTestSuite {
         productDao.save(product);
         itemDao.save(item);
 
-        int id = invoice.getId();
+        int invoiceId = invoice.getId();
+
+        invoiceDao.getById(invoiceId);
 
         //Then
 
-        Assert.assertNotEquals(0, id);
-
+        Assert.assertNotEquals(0, invoice.getId());
+        Assert.assertNotEquals(0, product.getId());
+        Assert.assertNotEquals(0, item.getId());
+        Assert.assertNotEquals(0, item2.getId());
+        Assert.assertNotEquals(0, invoiceDao.getById(invoiceId));
         //CleanUp
 //        try{
 //            invoiceDao.deleteById(id);
