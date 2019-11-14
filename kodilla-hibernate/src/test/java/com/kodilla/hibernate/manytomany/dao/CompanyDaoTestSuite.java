@@ -70,6 +70,12 @@ public class CompanyDaoTestSuite {
         Assert.assertNotEquals(0, employeeDao.getById(johnSmithId));
         Assert.assertNotEquals(0, employeeDao.getById(stephanieClarcksonId));
         Assert.assertNotEquals(0, employeeDao.getById(lindaKovalskyId));
+        Assert.assertNotEquals(0, employeeDao.getById(softwareMachineId));
+        Assert.assertNotEquals(0, employeeDao.getById(dataMaestersId));
+        Assert.assertNotEquals(0, employeeDao.getById(greyMatterId));
+        Assert.assertNotEquals(0, companyDao.getById(johnSmithId));
+        Assert.assertNotEquals(0, companyDao.getById(stephanieClarcksonId));
+        Assert.assertNotEquals(0, companyDao.getById(lindaKovalskyId));
 
 
         //CleanUp
