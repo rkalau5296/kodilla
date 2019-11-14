@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 //import javax.transaction.Transactional;
 import java.math.BigDecimal;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -55,8 +56,9 @@ public class InvoiceDaoTestSuite {
         itemDao.save(item2);
 
         int invoiceId = invoice.getId();
+        int itemId = item.getId();
+        int item2Id = item2.getId();
 
-        invoiceDao.getById(invoiceId);
 
         //Then
 
@@ -64,9 +66,10 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0, product.getId());
         Assert.assertNotEquals(0, item.getId());
         Assert.assertNotEquals(0, item2.getId());
-        Assert.assertNotEquals(0, invoiceDao.getById(invoiceId));
-        Assert.assertNotEquals(0, invoiceDao.getById(item.getId()));
-        Assert.assertNotEquals(0, invoiceDao.getById(item2.getId()));
+
+        Assert.assertEquals(itemDao.getById(itemId).getInvoice().getId(), invoiceDao.getById(invoiceId).getId());
+        Assert.assertEquals(itemDao.getById(item2Id).getInvoice().getId(), invoiceDao.getById(invoiceId).getId());
+
         //CleanUp
 //        try{
 //            invoiceDao.deleteById(id);
