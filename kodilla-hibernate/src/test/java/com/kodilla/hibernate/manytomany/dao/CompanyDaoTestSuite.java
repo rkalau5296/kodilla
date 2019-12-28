@@ -150,12 +150,8 @@ public class CompanyDaoTestSuite {
         List<Company> companiesGre = companyDao.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam("Gre");
 
         //Then
-//        Assert.assertNotEquals(0, companiesSof.size());
-//        Assert.assertNotEquals(0, companiesDat.size());
-//        Assert.assertNotEquals(0, companiesGre.size());
-
-
+        Assert.assertEquals(companiesSof.get(0).getName(), softwareMachine.getName());
+        Assert.assertEquals(companiesDat.get(0).getName(), dataMaesters.getName());
+        Assert.assertEquals(companiesGre.get(0).getName(), greyMatter.getName());
     }
-
-
 }
