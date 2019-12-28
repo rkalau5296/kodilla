@@ -1,5 +1,6 @@
 package com.kodilla.hibernate.invoice.dao;
 
+import com.kodilla.hibernate.invoice.Invoice;
 import com.kodilla.hibernate.invoice.Product;
 import com.kodilla.hibernate.manytomany.Company;
 import org.springframework.data.repository.CrudRepository;
@@ -10,5 +11,5 @@ import java.util.List;
 @Transactional
 @Repository
 public interface ProductDao extends CrudRepository<Product, Integer> {
-
+    Product getById(Integer id);
 }

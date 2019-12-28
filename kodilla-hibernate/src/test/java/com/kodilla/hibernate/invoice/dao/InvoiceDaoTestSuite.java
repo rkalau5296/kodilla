@@ -48,33 +48,46 @@ public class InvoiceDaoTestSuite {
         item.setProduct(product);
         item2.setProduct(product);
 
+        //When
+        invoiceDao.save(invoice);
+        productDao.save(product);
+        itemDao.save(item);
+        itemDao.save(item2);
+        Invoice invoiceFromDb = invoiceDao.getById(invoice.getId());
+
+        //Then
+        Assert.assertNotEquals(0, invoice.getId());
+        Assert.assertNotEquals(0, product.getId());
+        Assert.assertNotEquals(0, item.getId());
+        Assert.assertNotEquals(0, item2.getId());
+        Assert.assertEquals(invoiceFromDb.getItems(), invoice.getItems());
+    }
+    @Test
+    public void ProductDaoTestSuite() {
+        //Given
+        Product product = new Product("Bread");
+        Item item = new Item(product, new BigDecimal(5), 1, new BigDecimal(3));
+        Item item2 = new Item(product, new BigDecimal(5), 1, new BigDecimal(3));
+        Invoice invoice = new Invoice("1");
+
+        invoice.getItems().add(item);
+        invoice.getItems().add(item2);
+        item.setInvoice(invoice);
+        item2.setInvoice(invoice);
+
+        product.getItems().add(item);
+        product.getItems().add(item2);
+        item.setProduct(product);
+        item2.setProduct(product);
 
         //When
         invoiceDao.save(invoice);
         productDao.save(product);
         itemDao.save(item);
         itemDao.save(item2);
-
-        int invoiceId = invoice.getId();
-        int itemId = item.getId();
-        int item2Id = item2.getId();
-
+        Product productFromDb = productDao.getById(product.getId());
 
         //Then
-
-        Assert.assertNotEquals(0, invoice.getId());
-        Assert.assertNotEquals(0, product.getId());
-        Assert.assertNotEquals(0, item.getId());
-        Assert.assertNotEquals(0, item2.getId());
-
-        Assert.assertEquals(itemDao.getById(itemId).getInvoice().getId(), invoiceDao.getById(invoiceId).getId());
-        Assert.assertEquals(itemDao.getById(item2Id).getInvoice().getId(), invoiceDao.getById(invoiceId).getId());
-
-        //CleanUp
-//        try{
-//            invoiceDao.deleteById(id);
-//        }catch (Exception o) {
-//            //do nothing
-//        }
+        Assert.assertEquals(productFromDb.getItems(), product.getItems());
     }
 }
