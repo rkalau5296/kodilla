@@ -1,8 +1,8 @@
 package com.kodilla.testing.forum.statistics;
 
-class CalculateStatistics  {
+class CalculateStatistics {
 
-    Statistics  statistics;
+    Statistics statistics;
     private int quantityOfUsers;
     private int quantityOfPosts;
     private int quantityOfComments;
@@ -35,7 +35,7 @@ class CalculateStatistics  {
     }
 
 
-    public void calculateAdvStatistics(Statistics statistics){
+    public void calculateAdvStatistics(Statistics statistics) {
         try {
             quantityOfUsers = statistics.usersNames().size();
             quantityOfPosts = statistics.postsCount();
@@ -43,14 +43,13 @@ class CalculateStatistics  {
             avgQuantityOfPostsPerUser = statistics.postsCount() / statistics.usersNames().size();
             avgQuantityOfCommentsPerUser = statistics.commentsCount() / statistics.usersNames().size();
             avgQuantityOfCommentsPerPost = statistics.commentsCount() / statistics.postsCount();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println("division by zero exception!");
         }
     }
 
-    public String ShowStatistics(){
-        return  "quantityOfUsers: " + quantityOfUsers + "\n"
+    public String ShowStatistics() {
+        return "quantityOfUsers: " + quantityOfUsers + "\n"
                 + "quantityOfPosts: " + quantityOfPosts + "\n"
                 + "quantityOfComments " + quantityOfComments + "\n"
                 + "avgQuantityOfPostsPerUser " + avgQuantityOfPostsPerUser + "\n"

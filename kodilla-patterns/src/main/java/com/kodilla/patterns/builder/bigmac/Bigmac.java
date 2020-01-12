@@ -19,10 +19,12 @@ public final class Bigmac {
             this.bun = bun;
             return this;
         }
+
         public BigmacBuilder burgers(String burgers) {
             this.burgers = burgers;
             return this;
         }
+
         public BigmacBuilder sauce(String sauce) {
             this.sauce = sauce;
             return this;

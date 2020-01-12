@@ -2,11 +2,10 @@ package com.kodilla.testing.shape;
 
 import java.util.Objects;
 
-public class Triangle implements Shape{
+public class Triangle implements Shape {
     int lenght;
     int hieght;
     String name;
-
 
 
     public Triangle(int lenght, int hieght, String name) {
@@ -45,7 +44,7 @@ public class Triangle implements Shape{
 
     @Override
     public double getField() {
-        return (lenght*hieght)/2;
+        return (lenght * hieght) / 2;
     }
 
     @Override

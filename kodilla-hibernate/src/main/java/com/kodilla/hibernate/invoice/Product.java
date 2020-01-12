@@ -26,7 +26,7 @@ public class Product {
         this.items = items;
     }
 
-    public Product(){
+    public Product() {
 
     }
 

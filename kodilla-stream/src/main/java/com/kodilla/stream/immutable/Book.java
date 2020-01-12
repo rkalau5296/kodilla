@@ -12,6 +12,7 @@ public final class Book {
         this.author = author;
         this.yearOfPublication = yearOfPublication;
     }
+
     public String getTitle() {
         return title;
     }

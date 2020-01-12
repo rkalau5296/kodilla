@@ -9,14 +9,14 @@ import java.util.stream.IntStream;
 
 public class LibraryTestSuite {
     @Test
-    public void testGetBooks(){
+    public void testGetBooks() {
         //Given
         //adding sme books to library
         Library library = new Library("Great Library");
         IntStream.iterate(1, n -> n + 1)
                 .limit(10)
-                .forEach(n->library.getBooks().
-                        add(new Book("SomeBook"+n, "SomeAuthor"+n, LocalDate.of(2017, Month.MAY, 14+n))));
+                .forEach(n -> library.getBooks().
+                        add(new Book("SomeBook" + n, "SomeAuthor" + n, LocalDate.of(2017, Month.MAY, 14 + n))));
 
         Library clonedLibrary = null;
         try {

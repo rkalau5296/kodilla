@@ -6,7 +6,7 @@ public class ForumPost {
 
     public ForumPost(String postBody, String author) {
         this.postBody = postBody;
-        this.author= author;
+        this.author = author;
     }
 
     public String getPostBody() {

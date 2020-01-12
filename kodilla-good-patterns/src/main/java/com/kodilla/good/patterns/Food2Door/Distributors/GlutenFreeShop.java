@@ -32,7 +32,7 @@ public class GlutenFreeShop implements DistributorService {
         return informSupplier.getDistributorName();
     }
 
-    public void process () {
+    public void process() {
         System.out.println("This is the GlutenFreeShop order realisation ");
     }
 }

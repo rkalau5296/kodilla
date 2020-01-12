@@ -9,7 +9,7 @@ import static com.kodilla.patterns.factory.tasks.TaskFactory.*;
 
 public class TaskFactoryTestSuite {
     @Test
-    public void testFactoryDrivingTask(){
+    public void testFactoryDrivingTask() {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
@@ -19,8 +19,9 @@ public class TaskFactoryTestSuite {
         Assert.assertEquals(true, drivingTask.isTaskExecuted());
         Assert.assertEquals("Travel", drivingTask.getTaskName());
     }
+
     @Test
-    public void testFactoryPaintingTask(){
+    public void testFactoryPaintingTask() {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When
@@ -30,8 +31,9 @@ public class TaskFactoryTestSuite {
         Assert.assertEquals(true, paintingTask.isTaskExecuted());
         Assert.assertEquals("PaintingPicture", paintingTask.getTaskName());
     }
+
     @Test
-    public void testFactoryShoppingTask(){
+    public void testFactoryShoppingTask() {
         //Given
         TaskFactory taskFactory = new TaskFactory();
         //When

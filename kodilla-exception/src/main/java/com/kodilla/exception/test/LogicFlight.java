@@ -9,15 +9,13 @@ public class LogicFlight {
         this.availableAirports = availableAirports;
     }
 
-    public void findFlight (Flight flight) throws RouteNotFoundException {
+    public void findFlight(Flight flight) throws RouteNotFoundException {
 
         if (availableAirports.containsKey(flight.getArrivalAirport())) {
-            if(availableAirports.get(flight.getArrivalAirport())) {
+            if (availableAirports.get(flight.getArrivalAirport())) {
                 System.out.println("Flight found: This airport is avalible from your departure place");
-            }
-            else System.out.println("Sorry! Arrival airport is not avalible from your departure place");
-        }
-        else {
+            } else System.out.println("Sorry! Arrival airport is not avalible from your departure place");
+        } else {
             throw new RouteNotFoundException();
         }
     }

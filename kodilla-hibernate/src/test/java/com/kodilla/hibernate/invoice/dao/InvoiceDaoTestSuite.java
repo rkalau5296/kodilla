@@ -62,6 +62,7 @@ public class InvoiceDaoTestSuite {
         Assert.assertNotEquals(0, item2.getId());
         Assert.assertEquals(invoiceFromDb.getItems(), invoice.getItems());
     }
+
     @Test
     public void ProductDaoTestSuite() {
         //Given

@@ -3,10 +3,10 @@ package com.kodilla.patterns.singleton;
 public final class Logger {
     private static Logger logger = null;
 
-    public static Logger getInstance(){
+    public static Logger getInstance() {
         if (logger == null) {
             synchronized (Logger.class) {
-                if(logger == null){
+                if (logger == null) {
                     logger = new Logger();
                 }
             }

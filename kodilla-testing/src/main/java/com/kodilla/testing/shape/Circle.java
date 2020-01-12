@@ -7,7 +7,6 @@ public class Circle implements Shape {
     String name;
 
 
-
     public Circle(int radius, String name) {
         this.radius = radius;
         this.name = name;
@@ -32,12 +31,12 @@ public class Circle implements Shape {
 
     @Override
     public String getShapeName() {
-            return name;
+        return name;
     }
 
     @Override
     public double getField() {
-        return 3.14*radius*radius;
+        return 3.14 * radius * radius;
     }
 
     @Override

@@ -14,7 +14,7 @@ public class Item {
     private int quantity;
     private BigDecimal value;
 
-    public Item(){
+    public Item() {
     }
 
     public Item(Product product, BigDecimal price, int quantity, BigDecimal value) {

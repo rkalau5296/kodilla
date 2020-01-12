@@ -10,14 +10,14 @@ public class ProductOrderService {
         this.orderService = orderService;
         this.orderRepository = orderRepository;
     }
-    public OrderDto process (final OrderRequest orderRequest) {
+
+    public OrderDto process(final OrderRequest orderRequest) {
         boolean isOrdered = orderService.order(orderRequest.getUser());
         if (isOrdered) {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser());
             return new OrderDto(orderRequest.getUser(), true);
-        }
-        else {
+        } else {
             return new OrderDto(orderRequest.getUser(), false);
         }
     }

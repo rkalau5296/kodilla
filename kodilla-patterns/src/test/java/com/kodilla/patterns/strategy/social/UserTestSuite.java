@@ -25,8 +25,9 @@ public class UserTestSuite {
         Assert.assertEquals("This is Snapchat.", robertShouldPost);
         Assert.assertEquals("This is Twitter.", mikeShouldPost);
     }
+
     @Test
-    public void testIndividualSharingStrategy(){
+    public void testIndividualSharingStrategy() {
         //Given
         User peter = new Millenials("Peter Johnson");
 

@@ -7,7 +7,7 @@ public class OrderProduct {
         this.distributorService = distributorService;
     }
 
-    public void order (final DistributorService distributorService) {
+    public void order(final DistributorService distributorService) {
         distributorService.getProductName();
         distributorService.getProductAmount();
         distributorService.getDistributorName();

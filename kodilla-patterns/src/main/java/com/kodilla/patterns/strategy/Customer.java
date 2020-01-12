@@ -11,9 +11,11 @@ public class Customer {
     public String getName() {
         return name;
     }
+
     public String predict() {
         return buyPredictor.predictWhatToBuy();
     }
+
     public void setBuyingStrategy(BuyPredictor buyPredictor) {
         this.buyPredictor = buyPredictor;
     }

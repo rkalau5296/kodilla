@@ -41,9 +41,9 @@ public class StreamMain {
         Forum forum = new Forum();
         Map<Integer, ForumUser> par = forum.getUserList().stream()
                 .filter(b -> b.getYearFromBirthDate() <= 1998)
-                .filter(b -> b.getGender()=='M')
-                .filter(b -> b.getPostQuantity()>=1)
-                .collect(Collectors.toMap(b -> b.getUserId(), user->user));
+                .filter(b -> b.getGender() == 'M')
+                .filter(b -> b.getPostQuantity() >= 1)
+                .collect(Collectors.toMap(b -> b.getUserId(), user -> user));
         System.out.println("# elements: " + par.size());
         System.out.println(par);
     }

@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 
 @NamedQueries(
         @NamedQuery(
-                name="Employee.retrieveEmployeeNames",
+                name = "Employee.retrieveEmployeeNames",
                 query = "FROM Employee WHERE lastname = :name"
         )
 )
@@ -20,7 +20,7 @@ public class Employee {
     private String lastname;
     private List<Company> companies = new ArrayList<>();
 
-    @ManyToMany (cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "JOIN_COMPANIES_EMPLOYEES",
             joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "EMPLOYEE_ID")},

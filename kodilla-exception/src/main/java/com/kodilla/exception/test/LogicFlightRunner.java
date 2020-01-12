@@ -23,7 +23,7 @@ public class LogicFlightRunner {
 
         try {
             logicFlight.findFlight(flight1);
-        }catch (RouteNotFoundException e){
+        } catch (RouteNotFoundException e) {
 
         }
     }

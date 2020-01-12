@@ -21,16 +21,17 @@ ShapeCollectorTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
+
     @Test
-    public void testAddFigure (){
+    public void testAddFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         shapeCollector.addFigure(new Circle(5, "Circle1"));
         shapeCollector.addFigure(new Circle(4, "Circle2"));
-        shapeCollector.addFigure(new Triangle(5,2, "Triangle1"));
-        shapeCollector.addFigure(new Triangle(4,2, "Triangle2"));
+        shapeCollector.addFigure(new Triangle(5, 2, "Triangle1"));
+        shapeCollector.addFigure(new Triangle(4, 2, "Triangle2"));
         shapeCollector.addFigure(new Square(2, "Square1"));
         shapeCollector.addFigure(new Square(4, "Square2"));
         shapeCollector.addFigure(new Square(5, "Square3"));
@@ -39,22 +40,23 @@ ShapeCollectorTestSuite {
         Assert.assertEquals(7, shapeCollector.shapes.size());
         Assert.assertEquals(new Circle(5, "Circle1"), shapeCollector.getFigure(0));
         Assert.assertEquals(new Circle(4, "Circle2"), shapeCollector.getFigure(1));
-        Assert.assertEquals(new Triangle(5,2, "Triangle1"), shapeCollector.getFigure(2));
-        Assert.assertEquals(new Triangle(4,2, "Triangle2"), shapeCollector.getFigure(3));
+        Assert.assertEquals(new Triangle(5, 2, "Triangle1"), shapeCollector.getFigure(2));
+        Assert.assertEquals(new Triangle(4, 2, "Triangle2"), shapeCollector.getFigure(3));
         Assert.assertEquals(new Square(2, "Square1"), shapeCollector.getFigure(4));
         Assert.assertEquals(new Square(4, "Square2"), shapeCollector.getFigure(5));
         Assert.assertEquals(new Square(5, "Square3"), shapeCollector.getFigure(6));
     }
+
     @Test
-    public void testRemoveFigure (){
+    public void testRemoveFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         shapeCollector.addFigure(new Circle(5, "Circle1"));
         shapeCollector.addFigure(new Circle(4, "Circle2"));
-        shapeCollector.addFigure(new Triangle(5,2, "Triangle1"));
-        shapeCollector.addFigure(new Triangle(4,2, "Triangle2"));
+        shapeCollector.addFigure(new Triangle(5, 2, "Triangle1"));
+        shapeCollector.addFigure(new Triangle(4, 2, "Triangle2"));
         shapeCollector.addFigure(new Square(2, "Square1"));
         shapeCollector.addFigure(new Square(4, "Square2"));
         shapeCollector.addFigure(new Square(5, "Square3"));
@@ -64,21 +66,22 @@ ShapeCollectorTestSuite {
 
         //Then
         Assert.assertEquals(4, shapeCollector.shapes.size());
-        Assert.assertEquals(new Triangle(5,2, "Triangle1"), shapeCollector.getFigure(0));
-        Assert.assertEquals(new Triangle(4,2, "Triangle2"), shapeCollector.getFigure(1));
+        Assert.assertEquals(new Triangle(5, 2, "Triangle1"), shapeCollector.getFigure(0));
+        Assert.assertEquals(new Triangle(4, 2, "Triangle2"), shapeCollector.getFigure(1));
         Assert.assertEquals(new Square(2, "Square1"), shapeCollector.getFigure(2));
         Assert.assertEquals(new Square(5, "Square3"), shapeCollector.getFigure(3));
     }
+
     @Test
-    public void testGetFigure (){
+    public void testGetFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         shapeCollector.addFigure(new Circle(5, "Circle1"));
         shapeCollector.addFigure(new Circle(4, "Circle2"));
-        shapeCollector.addFigure(new Triangle(5,2, "Triangle1"));
-        shapeCollector.addFigure(new Triangle(4,2, "Triangle2"));
+        shapeCollector.addFigure(new Triangle(5, 2, "Triangle1"));
+        shapeCollector.addFigure(new Triangle(4, 2, "Triangle2"));
         shapeCollector.addFigure(new Square(2, "Square1"));
         shapeCollector.addFigure(new Square(4, "Square2"));
         shapeCollector.addFigure(new Square(5, "Square3"));
@@ -86,32 +89,33 @@ ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(new Circle(5, "Circle1"), shapeCollector.getFigure(0));
         Assert.assertEquals(new Circle(4, "Circle2"), shapeCollector.getFigure(1));
-        Assert.assertEquals(new Triangle(5,2, "Triangle1"), shapeCollector.getFigure(2));
-        Assert.assertEquals(new Triangle(4,2, "Triangle2"), shapeCollector.getFigure(3));
+        Assert.assertEquals(new Triangle(5, 2, "Triangle1"), shapeCollector.getFigure(2));
+        Assert.assertEquals(new Triangle(4, 2, "Triangle2"), shapeCollector.getFigure(3));
         Assert.assertEquals(new Square(2, "Square1"), shapeCollector.getFigure(4));
         Assert.assertEquals(new Square(4, "Square2"), shapeCollector.getFigure(5));
         Assert.assertEquals(new Square(5, "Square3"), shapeCollector.getFigure(6));
     }
+
     @Test
-    public void displayFigures(){
+    public void displayFigures() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         shapeCollector.addFigure(new Circle(5, "Circle1"));
         shapeCollector.addFigure(new Circle(4, "Circle2"));
-        shapeCollector.addFigure(new Triangle(5,2, "Triangle1"));
-        shapeCollector.addFigure(new Triangle(4,2, "Triangle2"));
+        shapeCollector.addFigure(new Triangle(5, 2, "Triangle1"));
+        shapeCollector.addFigure(new Triangle(4, 2, "Triangle2"));
         shapeCollector.addFigure(new Square(2, "Square1"));
         shapeCollector.addFigure(new Square(4, "Square2"));
         shapeCollector.addFigure(new Square(5, "Square3"));
-        String expected = "Circle1 78.5" +"\n"+
+        String expected = "Circle1 78.5" + "\n" +
                 "Circle2 50.24" + "\n" +
-                "Triangle1 5.0" +"\n"+
-                "Triangle2 4.0" +"\n"+
-                "Square1 4.0" +"\n"+
-                "Square2 16.0" +"\n"+
-                "Square3 25.0"+"\n";
+                "Triangle1 5.0" + "\n" +
+                "Triangle2 4.0" + "\n" +
+                "Square1 4.0" + "\n" +
+                "Square2 16.0" + "\n" +
+                "Square3 25.0" + "\n";
 
         //Then
         Assert.assertEquals(expected, shapeCollector.showFigures());

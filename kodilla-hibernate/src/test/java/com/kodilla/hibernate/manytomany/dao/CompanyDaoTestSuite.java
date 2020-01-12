@@ -22,7 +22,7 @@ public class CompanyDaoTestSuite {
     EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -87,8 +87,9 @@ public class CompanyDaoTestSuite {
         //    //do nothing
         //}
     }
+
     @Test
-    public void testSearchingEmployeeByName(){
+    public void testSearchingEmployeeByName() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -121,8 +122,9 @@ public class CompanyDaoTestSuite {
 //        Assert.assertNotEquals(0, kovalskys.size());
 
     }
+
     @Test
-    public void testRetrieveCompaniesWhereFirstThreeCharsAreEqualToParam(){
+    public void testRetrieveCompaniesWhereFirstThreeCharsAreEqualToParam() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");

@@ -73,7 +73,7 @@ public class BoardTestSuite {
     }
 
     @Test
-    public void testAddTaskList(){
+    public void testAddTaskList() {
         //Given
         Board project = prepareTestData();
         //When
@@ -81,8 +81,9 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(3, project.getTaskLists().size());
     }
+
     @Test
-    public void testAddTaskListFindUsersTasks(){
+    public void testAddTaskListFindUsersTasks() {
         //Given
         Board project = prepareTestData();
         //When
@@ -96,6 +97,7 @@ public class BoardTestSuite {
         Assert.assertEquals(user, tasks.get(0).getAssignedUser());
         Assert.assertEquals(user, tasks.get(1).getAssignedUser());
     }
+
     @Test
     public void testAddTaskListFindOutdatedTasks() {
         //Given
@@ -115,6 +117,7 @@ public class BoardTestSuite {
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
     }
+
     @Test
     public void testAddTaskListFindLongTasks() {
         //Given
@@ -133,8 +136,9 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(2, longTasks);
     }
+
     @Test
-    public void testAddTaskListAverageWorkingOnTask(){
+    public void testAddTaskListAverageWorkingOnTask() {
         //Given
         Board project = prepareTestData();
 
@@ -145,7 +149,7 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(a -> a.getTasks().stream())
                 .map(a -> a.taskDaysInProgress())
-                .mapToLong(n-> n)
+                .mapToLong(n -> n)
                 .sum();
 
         long numberOfTaskInProgress = project.getTaskLists().stream()
@@ -153,7 +157,7 @@ public class BoardTestSuite {
                 .flatMap(a -> a.getTasks().stream())
                 .map(a -> a.taskDaysInProgress())
                 .count();
-        long avg = numberOfDaysInProgress/numberOfTaskInProgress;
+        long avg = numberOfDaysInProgress / numberOfTaskInProgress;
 
         //Then
 
@@ -161,8 +165,6 @@ public class BoardTestSuite {
         Assert.assertEquals(10, avg);
 
     }
-
-
 
 
 }

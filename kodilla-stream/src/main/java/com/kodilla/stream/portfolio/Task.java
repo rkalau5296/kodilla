@@ -24,6 +24,7 @@ public final class Task {
     public String getTitle() {
         return title;
     }
+
     public String getDescription() {
         return description;
     }
@@ -40,7 +41,7 @@ public final class Task {
         return created;
     }
 
-    public long taskDaysInProgress(){
+    public long taskDaysInProgress() {
         return DAYS.between(getCreated(), LocalDate.now());
     }
 

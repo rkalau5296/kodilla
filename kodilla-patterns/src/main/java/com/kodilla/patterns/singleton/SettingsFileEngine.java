@@ -13,7 +13,7 @@ public final class SettingsFileEngine {
 
     public static SettingsFileEngine getInstance() {
         if (settingsFileEngineInstance == null) {
-            synchronized(SettingsFileEngine.class) {
+            synchronized (SettingsFileEngine.class) {
                 if (settingsFileEngineInstance == null) {
                     settingsFileEngineInstance = new SettingsFileEngine();
                 }
@@ -37,6 +37,7 @@ public final class SettingsFileEngine {
         System.out.println("Loading settings from file");
         return true;
     }
+
     public boolean saveSettings() {
         System.out.println("Saving settings to file");
         return true;

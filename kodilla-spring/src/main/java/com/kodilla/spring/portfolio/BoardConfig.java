@@ -22,7 +22,9 @@ public class BoardConfig {
 
     @Bean(name = "toDoList")
 
-    public TaskList getToDoList() { return new TaskList(); }
+    public TaskList getToDoList() {
+        return new TaskList();
+    }
 
     @Bean(name = "inProgressList")
 

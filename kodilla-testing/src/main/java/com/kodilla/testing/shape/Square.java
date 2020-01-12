@@ -35,7 +35,7 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        return lenght*lenght;
+        return lenght * lenght;
     }
 
     @Override

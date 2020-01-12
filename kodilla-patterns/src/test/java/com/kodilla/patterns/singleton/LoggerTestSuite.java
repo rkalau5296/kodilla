@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class LoggerTestSuite {
     @Test
-    public void testGetLastLog(){
+    public void testGetLastLog() {
         //Given
         Logger.getInstance().log("To jest jakiś testowy log");
         //When

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 public class WorldTestSuite {
     @Test
-    public void testGetPeopleQuantity(){
+    public void testGetPeopleQuantity() {
 
         //Given
 
@@ -39,6 +39,6 @@ public class WorldTestSuite {
         BigDecimal actual = world.getPeopleQuantity();
         //Then
         BigDecimal expectedQuantityPeople = new BigDecimal("300000000");
-        Assert.assertEquals(expectedQuantityPeople, actual );
+        Assert.assertEquals(expectedQuantityPeople, actual);
     }
 }

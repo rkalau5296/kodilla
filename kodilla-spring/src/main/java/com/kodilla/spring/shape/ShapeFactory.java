@@ -11,6 +11,7 @@ public class ShapeFactory {
     public Square createSquare() {
         return new Square();
     }
+
     @Bean
     public Shape chosenShape() {
         Shape theShape;

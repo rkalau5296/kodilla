@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam",
         query = "SELECT * FROM COMPANIES" + " WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :name",
@@ -16,7 +17,7 @@ public class Company {
     private String name;
     private List<Employee> employees = new ArrayList<>();
 
-    @ManyToMany (cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
     }

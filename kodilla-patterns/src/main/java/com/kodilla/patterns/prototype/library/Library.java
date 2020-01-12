@@ -16,28 +16,33 @@ public final class Library extends Prototype {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public Set<Book> getBooks() {
         return books;
     }
+
     public Library shallowCopy() throws CloneNotSupportedException {
-        return (Library)super.clone();
+        return (Library) super.clone();
     }
+
     public Library deepCopy() throws CloneNotSupportedException {
-        Library clonedLibrary = (Library)super.clone();
+        Library clonedLibrary = (Library) super.clone();
         clonedLibrary.books = new HashSet<>();
-        for(Book book : books) {
-            Book clonedBook = new Book(book.title, book.author, book.publicationDate );
+        for (Book book : books) {
+            Book clonedBook = new Book(book.title, book.author, book.publicationDate);
             clonedLibrary.getBooks().add(clonedBook);
         }
         return clonedLibrary;
     }
+
     @Override
     public String toString() {
         String s = "   Library [" + name + "]";
-        for(Book book : books) {
+        for (Book book : books) {
             s = s + "\n" + book.toString();
         }
         return s;

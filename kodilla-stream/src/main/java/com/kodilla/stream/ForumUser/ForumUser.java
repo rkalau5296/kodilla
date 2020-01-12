@@ -16,10 +16,12 @@ public final class ForumUser {
         this.birthDate = birthDate;
         this.postQuantity = postQuantity;
     }
-    public int getYearFromBirthDate(){
+
+    public int getYearFromBirthDate() {
         int year = getBirthDate().getYear();
         return year;
     }
+
     public int getPostQuantity() {
         return postQuantity;
     }

@@ -8,22 +8,22 @@ public class CollectionTestSuite {
     ArrayList<Integer> numbers;
 
     @Before
-    public void before(){
+    public void before() {
         numbers = new ArrayList<>();
-        for (int i=0; i<20; i++){
+        for (int i = 0; i < 20; i++) {
             numbers.add(i);
         }
         System.out.println("Test Case: begin");
     }
 
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
 
 
     @Test
-    public void testOddNumbersExterminatorEmptyList (){
+    public void testOddNumbersExterminatorEmptyList() {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
         ArrayList<Integer> numbers1 = new ArrayList<>();
@@ -33,11 +33,12 @@ public class CollectionTestSuite {
         //Then
         Assert.assertTrue(result.isEmpty());
     }
+
     @Test
-    public void testOddNumbersExterminatorEvenList (){
+    public void testOddNumbersExterminatorEvenList() {
         //Given
         ArrayList<Integer> expectedList = new ArrayList<>();
-        for (int i=0;i<20; i++){
+        for (int i = 0; i < 20; i++) {
             if (numbers.get(i) % 2 == 0) {
                 expectedList.add(numbers.get(i));
             }
@@ -48,14 +49,15 @@ public class CollectionTestSuite {
         ArrayList<Integer> result = oddNumbersExterminator.exterminate(numbers);
 
         //Then
-        Assert.assertEquals(expectedList,  result);
-        Assert.assertEquals(expectedList.size(),  result.size());
+        Assert.assertEquals(expectedList, result);
+        Assert.assertEquals(expectedList.size(), result.size());
     }
+
     @Test
-    public void testOddNumbersExterminatorOddList (){
+    public void testOddNumbersExterminatorOddList() {
         //Given
         ArrayList<Integer> expectedList = new ArrayList<>();
-        for (int i=0;i<20; i++){
+        for (int i = 0; i < 20; i++) {
             if (!(numbers.get(i) % 2 == 0)) {
                 expectedList.add(numbers.get(i));
             }
@@ -66,6 +68,6 @@ public class CollectionTestSuite {
         ArrayList<Integer> result = oddNumbersExterminator.exterminate(numbers);
 
         //Then
-        Assert.assertNotEquals(expectedList,  result);
+        Assert.assertNotEquals(expectedList, result);
     }
 }

@@ -6,7 +6,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class BoardTestSuite {
     @Test
-    public void testTaskAdd(){
+    public void testTaskAdd() {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext(BoardConfig.class);
@@ -21,5 +21,5 @@ public class BoardTestSuite {
         System.out.println(toDoList);
         System.out.println(inProgressList);
         System.out.println(doneList);
-        }
+    }
 }

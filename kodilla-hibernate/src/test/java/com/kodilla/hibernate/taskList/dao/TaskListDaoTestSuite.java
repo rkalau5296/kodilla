@@ -13,6 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import org.springframework.transaction.annotation.Transactional;
+
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +29,7 @@ public class TaskListDaoTestSuite {
     @Autowired
     private TaskDao taskDao;
     private static String LISTNAME = "ToDo List";
+
     @Test
     public void testTaskDaoSave() {
         //Given
@@ -44,6 +46,7 @@ public class TaskListDaoTestSuite {
         //CleanUp
         taskListDao.deleteById(id);
     }
+
     @Test
     public void testFindByListName() {
         //Given
@@ -62,6 +65,7 @@ public class TaskListDaoTestSuite {
         int id = readTasks.get(0).getId();
         taskListDao.deleteById(id);
     }
+
     @Test
     public void testTaskListDaoSaveWithTasks() {
         //Given
@@ -87,6 +91,7 @@ public class TaskListDaoTestSuite {
         //CleanUp
         //taskListDao.deleteById(id);
     }
+
     @Test
     public void testNamedQueries() {
         //Given

@@ -20,10 +20,11 @@ public class ExtraFoodShop implements Supplier {
     public boolean checkProductAvailability(OrderRequest orderRequest) {
         return true;
     }
+
     @Override
     public OrderDto process(OrderRequest orderRequest) {
         boolean isAvailable = checkProductAvailability(orderRequest);
-        if(isAvailable) {
+        if (isAvailable) {
             orderService.order(orderRequest);
             mailInformationCenter.inform(orderRequest);
             orderRepository.saveData(orderRequest);

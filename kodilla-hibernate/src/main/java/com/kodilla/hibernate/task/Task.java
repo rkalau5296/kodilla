@@ -5,11 +5,12 @@ import com.kodilla.hibernate.tasklist.TaskList;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+
 @NamedQueries({
         @NamedQuery(
-                name="Task.retrieveLongTasks",
+                name = "Task.retrieveLongTasks",
                 query = "FROM Task WHERE duration >10"
-                ),
+        ),
         @NamedQuery(
                 name = "Task.retrieveShortTasks",
                 query = "FROM Task WHERE duration <=10"
@@ -25,7 +26,7 @@ import java.util.Date;
         resultClass = Task.class
 )
 @Entity
-@Table (name="TASKS")
+@Table(name = "TASKS")
 public class Task {
     private int id;
     private String description;
@@ -35,7 +36,7 @@ public class Task {
     private TaskList taskList;
 
     @ManyToOne
-    @JoinColumn (name = "TASKLIST_ID")
+    @JoinColumn(name = "TASKLIST_ID")
     public TaskList getTaskList() {
         return taskList;
     }
@@ -44,8 +45,8 @@ public class Task {
         this.taskList = taskList;
     }
 
-    @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn (name="TASK_FINANCIALS_ID")
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "TASK_FINANCIALS_ID")
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
@@ -56,6 +57,7 @@ public class Task {
 
     public Task() {
     }
+
     public Task(String description, int duration) {
         this.description = description;
         this.created = new Date();
@@ -65,25 +67,27 @@ public class Task {
     @Id
     @GeneratedValue
     @NotNull
-    @Column (name="ID", unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
 
-    @Column (name ="DESCRIPTION")
+    @Column(name = "DESCRIPTION")
     public String getDescription() {
         return description;
     }
 
     @NotNull
-    @Column (name="CREATED")
+    @Column(name = "CREATED")
     public Date getCreated() {
         return created;
     }
-    @Column (name ="DURATION")
+
+    @Column(name = "DURATION")
     public int getDuration() {
         return duration;
     }
+
     private void setId(int id) {
         this.id = id;
     }
