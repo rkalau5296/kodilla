@@ -1,4 +1,7 @@
-package com.kodilla.patterns2;
+package com.kodilla.patterns2.facade;
+
+import com.kodilla.patterns2.facade.Item;
+import com.kodilla.patterns2.facade.ProductService;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

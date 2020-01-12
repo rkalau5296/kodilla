@@ -1,5 +1,6 @@
-package com.kodilla.patterns2;
+package com.kodilla.patterns2.facade;
 
+import com.kodilla.patterns2.facade.ShopService;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
