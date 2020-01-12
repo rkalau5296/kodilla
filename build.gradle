@@ -18,6 +18,8 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     implementation 'junit:junit:4.12'
+    implementation 'junit:junit:4.12'
+    implementation 'org.testng:testng:6.9.6'
 }
 
 test {
