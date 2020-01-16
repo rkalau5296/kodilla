@@ -2,6 +2,7 @@ package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
+import com.kodilla.hibernate.manytomany.facade.ManyToManyFacade;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +12,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
+import static org.junit.Assert.assertEquals;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CompanyDaoTestSuite {
@@ -19,6 +22,9 @@ public class CompanyDaoTestSuite {
 
     @Autowired
     EmployeeDao employeeDao;
+
+    @Autowired
+    ManyToManyFacade manyToManyFacade;
 
     @Test
     public void testSaveManyToMany() {
@@ -151,8 +157,50 @@ public class CompanyDaoTestSuite {
         List<Company> companiesGre = companyDao.retrieveCompaniesWhereFirstThreeCharsAreEqualToParam("Gre");
 
         //Then
-        Assert.assertEquals(companiesSof.get(0).getName(), softwareMachine.getName());
-        Assert.assertEquals(companiesDat.get(0).getName(), dataMaesters.getName());
-        Assert.assertEquals(companiesGre.get(0).getName(), greyMatter.getName());
+        assertEquals(companiesSof.get(0).getName(), softwareMachine.getName());
+        assertEquals(companiesDat.get(0).getName(), dataMaesters.getName());
+        assertEquals(companiesGre.get(0).getName(), greyMatter.getName());
+    }
+
+    @Test
+    public void testRetrieveCompaniesNamesWhereNamesLikeParam(){
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        greyMatter.getEmployees().add(johnSmith);
+        greyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(greyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(greyMatter);
+
+        //When
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+
+        employeeDao.save(johnSmith);
+        employeeDao.save(johnSmith);
+        employeeDao.save(johnSmith);
+
+        List<Company> soft  = manyToManyFacade.retrieveCompaniesWhereNameLikeParam("Soft");
+        List<Company> maest = manyToManyFacade.retrieveCompaniesWhereNameLikeParam("Maest");
+        List<Company> matt = manyToManyFacade.retrieveCompaniesWhereNameLikeParam("Matt");
+
+        //Then
+        assertEquals(soft.get(0).getName(), softwareMachine.getName());
+        assertEquals(maest.get(0).getName(), dataMaesters.getName());
+        assertEquals(matt.get(0).getName(), greyMatter.getName());
     }
 }

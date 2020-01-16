@@ -11,9 +11,9 @@ public class Order {
     private List<Item> items = new ArrayList<>();
     private Long orderId;
     private Long userId;
-    private boolean isPaid;
-    private boolean isVerified;
-    private boolean isSubmitted;
+    private boolean isPaid = false;
+    private boolean isVerified = false;
+    private boolean isSubmitted = false;
     private ProductService productService;
 
     public Order(Long orderId, Long userId, ProductService productService) {

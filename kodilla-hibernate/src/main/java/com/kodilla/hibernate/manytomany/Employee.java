@@ -12,6 +12,11 @@ import javax.persistence.Entity;
                 query = "FROM Employee WHERE lastname = :name"
         )
 )
+
+@NamedNativeQuery(
+        name = "Employee.retrieveEmployeesNamesWhereNamesLikeParam",
+        query = "FROM Employee WHERE lastname like :%name%"
+)
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
