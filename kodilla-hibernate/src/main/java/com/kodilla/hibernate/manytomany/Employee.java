@@ -15,7 +15,8 @@ import javax.persistence.Entity;
 
 @NamedNativeQuery(
         name = "Employee.retrieveEmployeesNamesWhereNamesLikeParam",
-        query = "FROM Employee WHERE lastname like %:name%"
+        query = "select * FROM EMPLOYEES WHERE LASTNAME like concat('%', :name, '%')",
+        resultClass = Employee.class
 )
 @Entity
 @Table(name = "EMPLOYEES")

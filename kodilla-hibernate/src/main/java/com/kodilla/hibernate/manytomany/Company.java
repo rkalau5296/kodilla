@@ -13,8 +13,8 @@ import java.util.List;
 )
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesNamesWhereNamesLikeParam",
-        query = "SELECT * FROM COMPANIES" + " WHERE name like CONCAT(\"%\" , :name , \"%\")",
-        resultClass = List.class
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME like CONCAT('%' , :name , '%')",
+        resultClass = Company.class
 )
 @Entity
 @Table(name = "COMPANIES")
