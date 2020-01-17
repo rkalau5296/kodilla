@@ -3,6 +3,7 @@ package com.kodilla.hibernate.manytomany;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @NamedNativeQuery(
@@ -12,8 +13,8 @@ import java.util.List;
 )
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesNamesWhereNamesLikeParam",
-        query = "FROM Company WHERE name like :%name%",
-        resultClass = Company.class
+        query = "SELECT * FROM COMPANIES" + " WHERE name like CONCAT(\"%\" , :name , \"%\")",
+        resultClass = List.class
 )
 @Entity
 @Table(name = "COMPANIES")

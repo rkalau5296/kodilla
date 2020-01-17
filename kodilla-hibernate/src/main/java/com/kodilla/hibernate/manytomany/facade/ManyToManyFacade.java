@@ -17,8 +17,8 @@ public final class  ManyToManyFacade {
     @Autowired
     EmployeeDao employeeDao;
 
-    public List<Company> retrieveCompaniesWhereNameLikeParam(String param){
-        return companyDao.retrieveCompaniesNamesWhereNamesLikeParam(param);
+    public List<Company> retrieveCompaniesWhereNameLikeParam(String name){
+        return companyDao.retrieveCompaniesNamesWhereNamesLikeParam(name);
     }
 
     public List<Employee> retrieveEmployeesWhereNameLikeParam(String param){
