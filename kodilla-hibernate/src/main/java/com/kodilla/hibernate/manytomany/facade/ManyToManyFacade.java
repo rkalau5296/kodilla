@@ -1,6 +1,7 @@
 package com.kodilla.hibernate.manytomany.facade;
 
 import com.kodilla.hibernate.manytomany.Company;
+import com.kodilla.hibernate.manytomany.Employee;
 import com.kodilla.hibernate.manytomany.dao.CompanyDao;
 import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public final class  ManyToManyFacade {
         return companyDao.retrieveCompaniesNamesWhereNamesLikeParam(param);
     }
 
-    public void retrieveEmployeesWhereNameLikeParam(String param){
-        employeeDao.retrieveEmployeesNamesWhereNamesLikeParam(param);
+    public List<Employee> retrieveEmployeesWhereNameLikeParam(String param){
+        return employeeDao.retrieveEmployeesNamesWhereNamesLikeParam(param);
     }
 }

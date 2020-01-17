@@ -191,8 +191,8 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
 
         employeeDao.save(johnSmith);
-        employeeDao.save(johnSmith);
-        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
 
         List<Company> soft  = manyToManyFacade.retrieveCompaniesWhereNameLikeParam("Soft");
         List<Company> maest = manyToManyFacade.retrieveCompaniesWhereNameLikeParam("Maest");
@@ -202,5 +202,46 @@ public class CompanyDaoTestSuite {
         assertEquals(soft.get(0).getName(), softwareMachine.getName());
         assertEquals(maest.get(0).getName(), dataMaesters.getName());
         assertEquals(matt.get(0).getName(), greyMatter.getName());
+    }
+    @Test
+    public void testRetrieveEmployeesNamesWhereNamesLikeParam(){
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+        Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
+
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+        Company greyMatter = new Company("Grey Matter");
+
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        greyMatter.getEmployees().add(johnSmith);
+        greyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(greyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(greyMatter);
+
+        //When
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
+
+        employeeDao.save(johnSmith);
+        employeeDao.save(stephanieClarckson);
+        employeeDao.save(lindaKovalsky);
+
+        List<Employee> smiths  = manyToManyFacade.retrieveEmployeesWhereNameLikeParam("Smith");
+        List<Employee> clarcksons = manyToManyFacade.retrieveEmployeesWhereNameLikeParam("Clarckson");
+        List<Employee> kovalskies = manyToManyFacade.retrieveEmployeesWhereNameLikeParam("Kovalsky");
+
+        //Then
+        assertEquals(smiths.get(0).getLastname(), johnSmith.getLastname());
+        assertEquals(clarcksons.get(0).getLastname(), stephanieClarckson.getLastname());
+        assertEquals(kovalskies.get(0).getLastname(), lindaKovalsky.getLastname());
     }
 }
