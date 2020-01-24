@@ -9,6 +9,9 @@ public class MedianAdapter extends MedianAdaptee implements Classifier {
     @Override
     public int publicationYearMedian(Set<Book> bookset) {
         //TODO publicationYearMedian method
+        //media adaptee
+
+        //przeiterować set skonwertować z setu na mapę, i użyć z medianadaptee  medianPublicationYear i ona policzyc tę medianę
         return 1980;
     }
 }
