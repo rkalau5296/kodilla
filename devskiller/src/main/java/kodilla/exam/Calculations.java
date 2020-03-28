@@ -5,14 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Calculations {
-    public double calculateBestAverage1(Map<Student, Grades> scores) {
-        List<Double> averages = new ArrayList<>();
-        for (Grades grade : scores.values()) {
-            Stream.of(grade.getEnglish(), grade.getMaths(), grade.getPhysics()).flatMap(Collection::stream)
-                    .mapToInt(Integer::valueOf).average().ifPresent(averages::add);
-        }
-        return averages.stream().max(Double::compareTo).orElse(0.0);
-    }
+
 
     public double calculateBestAverage(Map<Student, Grades> scores) {
 
@@ -27,6 +20,14 @@ public class Calculations {
 
         }
 
+        return averages.stream().max(Double::compareTo).orElse(0.0);
+    }
+    public double calculateBestAverageAntotherVersion(Map<Student, Grades> scores) {
+        List<Double> averages = new ArrayList<>();
+        for (Grades grade : scores.values()) {
+            Stream.of(grade.getEnglish(), grade.getMaths(), grade.getPhysics()).flatMap(Collection::stream)
+                    .mapToInt(Integer::valueOf).average().ifPresent(averages::add);
+        }
         return averages.stream().max(Double::compareTo).orElse(0.0);
     }
 

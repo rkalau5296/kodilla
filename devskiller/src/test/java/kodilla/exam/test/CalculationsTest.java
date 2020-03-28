@@ -35,7 +35,18 @@ public class CalculationsTest {
         //then
         Assert.assertEquals(4.117, result, 0.001);
     }
+    @Test
+    public void testCalculateBestAverageAnotherVersionMethod() {
+        //given
+        Calculations calculations = new Calculations();
+        Map<Student, Grades> entries = prepareData();
 
+        //when
+        double result = calculations.calculateBestAverageAntotherVersion(entries);
+
+        //then
+        Assert.assertEquals(4.117, result, 0.001);
+    }
     @Test
     public void testFindStudentsNamesWithBestAverage() {
         //given
