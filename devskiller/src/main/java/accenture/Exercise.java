@@ -1,5 +1,6 @@
 package accenture;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +25,12 @@ public class Exercise {
     }
 
     public static void main(String[] args) {
-        List<Integer> integerList = asList(-1, 1, 3, 2, 5, 6, -1, 3, 6);
-        System.out.println(integerList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting())));
+        List<String> strings = Arrays.asList("a1", "a2", "b3", "b4", "c5", "c6");
+        strings
+                .stream()
+                .map(string -> string.substring(1))
+                .mapToInt(Integer::parseInt)
+                .average()
+                .ifPresent(System.out::println);
     }
 }
